@@ -87,6 +87,11 @@ h2 {
     display: none;
 }
 
+.hint {
+    font-size: 12px;
+    color: gray;
+}
+
 /* Main Page */
 
 .main-page {
@@ -366,6 +371,7 @@ body.mobile-platform .nav-menu {
     line-height: 45px;
     width: 100%;
     max-width: 272px;
+    height: 48px;
     background-color: transparent;
     outline: transparent;
 }
@@ -385,11 +391,51 @@ body.mobile-platform .nav-menu {
 
 .contacts button:hover:before {
     border-color: white;
-    transform: rotateZ(0) rotateX(0) rotateY(0) translateX(-13px);
+    transform: rotateZ(-55deg) rotateX(5deg) rotateY(15deg);
 }
 
 .contacts button:active {
     top: 1px
+}
+
+.contacts button .loader,
+.contacts button .success,
+.contacts button .error {
+    display: none;
+}
+
+.contacts button.send {
+    pointer-events: none;
+}
+
+.contacts button.sent span,
+.contacts button.error span {
+    display: none;
+}
+
+.contacts button.sent .success {
+    display: inline;
+}
+
+.contacts button.error .error {
+    display: inline;
+}
+
+.contacts button.send span {
+    opacity: 0;
+    display: none;
+}
+
+.contacts button.send:before {
+    animation:flyGrid 1s linear;
+    transform:translateX(1000px);
+}
+
+.contacts button.load .loader {
+    display: inline-flex;
+    opacity: 1;
+    --delay: 1s;
+    animation: loader 1s var(--delay) infinite ease-in;
 }
 
 /* performances */
@@ -429,5 +475,23 @@ body.mobile-platform .nav-menu {
     }
     100% {
         transform: translateY(-8px);
+    }
+}
+
+@keyframes flyGrid{
+    0%{ transform:translate3d(0px, 0px, 0px);}
+    75%{ transform:translate3d(-200px, 0px, 0px);}
+    100%{ transform:translate3d(100px, 0px, 0px);}
+}
+
+@keyframes loader {
+    0%,
+    100% {
+        color: red;
+        transform: translateY(0);
+    }
+    50% {
+        color: blue;
+        transform: translateY(-5px);
     }
 }

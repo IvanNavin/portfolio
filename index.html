@@ -13,7 +13,7 @@
 </head>
 <body>
 <!-- кнопка назад https://codepen.io/corentinfardeau/pen/wzpXBQ -->
-    <div class="wrapper" data-nav-wrapper="contacts">
+    <div class="wrapper" data-nav-wrapper="main-page">
         <section class="main-page">
             <canvas id="fluid"></canvas>
             <img src="./img/iam-wb-1.png" alt="in the photo Ivan in a blue shirt">
@@ -54,19 +54,23 @@
                 <h2>Сказать привет</h2>
 
                 <form id="contact-form">
-                    <input type="hidden" name="contact_number">
                     <div class="form-block" data-form-block>
-                        <input class="fld" id="name" type="text" data-fld value="Иван">
+                        <input class="fld" id="name" type="text" data-fld>
                         <label class="lbl" for="name">Имя</label>
                     </div>
 
                     <div class="form-block" data-form-block>
-                        <textarea class="fld textarea" id="txt"  rows="5" data-fld>Привет</textarea>
-                        <label class="lbl" for="txt">Сообщение</label>
+                        <textarea class="fld textarea" id="message"  rows="5" data-fld></textarea>
+                        <label class="lbl" for="message">Сообщение</label>
                     </div>
 
                     <button type="submit">
                         <span>Отправить сообщение</span>
+                        <span class="loader" style="--delay:0.1s">.</span>
+                        <span class="loader" style="--delay:0.2s">.</span>
+                        <span class="loader" style="--delay:0.3s">.</span>
+                        <span class="success">Сообщение отправлено</span>
+                        <span class="error">Что-то пошло не так</span>
                     </button>
                 </form>
 

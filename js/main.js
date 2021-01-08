@@ -68,20 +68,79 @@ class formManager {
 const sendForm = () => {
     document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
-        // generate a five digit number for the contact_number variable
-        this.contact_number.value = Math.random() * 100000 | 0;
-        // these IDs from the previous steps
-        emailjs.sendForm('service_p87kxia', 'template_s5whvsc', this)
-            .then(function() {
-                console.log('SUCCESS!');
-            }, function(error) {
-                console.error('FAILED...', error);
-            });
+
+        const button = this.querySelector('button[type="submit"]');
+
+        button.classList.add('send');
+
+        setTimeout(_ => {
+            if (button.classList.contains('send')) {
+                button.classList.add('load');
+            }
+        }, 1000);
+
+        const templateParams = {
+            from_name: this.name.value,
+            message: this.message.value
+        };
+
+        const successHandler = _ => {
+            button.classList.add('sent');
+        };
+
+        const errorHandler = error => {
+            button.classList.add('error');
+            console.error('FAILED...', error)
+        };
+
+        const finallyHandler = _ => button.classList.remove('send', 'load');
+
+        if (!validator(this)) {
+            return false;
+        }
+
+        emailjs.send(
+            'service_p87kxia',
+            'template_s5whvsc',
+            templateParams,
+            'user_zvgv0ouqyrlxggmY5RXt7'
+        ).then(successHandler, errorHandler)
+            .finally(finallyHandler)
     });
 }
 
-const validator = () => {
+const clearAllErrors = () => {
+    document.querySelectorAll('[data-fld]').forEach(fld => {
+        const wrapper = fld.closest('[data-form-block]');
+        const hint = wrapper.querySelector('.hint');
 
+        hint && wrapper.removeChild(hint);
+    })
+}
+
+const addError = (to, message) => {
+    clearAllErrors();
+    const wrapper = to.closest('[data-form-block]');
+    const html = `<span class="hint">${message}</span>`;
+
+    wrapper.insertAdjacentHTML( 'beforeend', html );
+}
+
+const validator = (params) => {
+    const name = params.name;
+    const message = params.message;
+
+    if (name.value === '' || name.value.length < 2 ) {
+        addError(name, 'Введите более 1 символа');
+        return false;
+    }
+
+    if (message.value === '') {
+        addError(message, 'Это поле не может быть пустым');
+        return false
+    }
+
+    return true;
 }
 
 const buttons = {
@@ -126,8 +185,6 @@ const facts = new Map ([
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    emailjs.init('user_zvgv0ouqyrlxggmY5RXt7');
-
     const mainPage = document.querySelector('.main-page');
     const navMenu = document.querySelector('[data-nav-menu]')
     const factsWrapper = document.querySelector('[data-facts]');
@@ -165,4 +222,5 @@ document.addEventListener('DOMContentLoaded', function () {
     navigation();
     new formManager();
     sendForm();
+
 });
