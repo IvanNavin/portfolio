@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script type="text/javascript" src="./js/email.min.js"></script>
+    <title>Ivan Portfolio</title>
+</head>
+<body>
+<!-- кнопка назад https://codepen.io/corentinfardeau/pen/wzpXBQ -->
+    <div class="wrapper" data-nav-wrapper="contacts">
+        <section class="main-page">
+            <canvas id="fluid"></canvas>
+            <img src="./img/iam-wb-1.png" alt="in the photo Ivan in a blue shirt">
+
+            <h1 class="nav-menu" data-nav-menu></h1>
+
+            <span class="tap-indication"> anywhere</span>
+            <p class="help">Press "P" for Pause. Press "Space" for new effect</p>
+        </section>
+
+        <section class="about">
+            <h2>Обо мне</h2>
+            <p>Я занимаюсь разработкой Front-end приложений, вёрсткой и обслуживанием сайтов.</p>
+            <p>Мне нравится превращать сложные задачи в простые, красивые и интуитивно понятные конструкции.</p>
+            <p>Когда я не пишу код, я играю на гитаре, жарю мясо или уделяю время семье.</p>
+
+            <h2 class="facts-header">Случайные факты:</h2>
+            <ul class="facts" data-facts></ul>
+        </section>
+
+        <section class="my-works" data-works="show-all">
+
+            <h2>Мои работы</h2>
+
+            <div class="wrapper">
+                <button data-works-name="show-all">SHOW ALL</button>
+                <button data-works-name="sass">SASS</button>
+                <button data-works-name="less">LESS</button>
+                <button data-works-name="nodejs">NODEJS</button>
+                <button data-works-name="react">REACT</button>
+                <button data-works-name="canvas">CANVAS</button>
+            </div>
+        </section>
+
+        <section class="contacts">
+            <div class="wrapper">
+
+                <h2>Сказать привет</h2>
+
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <div class="form-block" data-form-block>
+                        <input class="fld" id="name" type="text" data-fld>
+                        <label class="lbl" for="name">Имя</label>
+                    </div>
+
+                    <div class="form-block" data-form-block>
+                        <textarea class="fld textarea" id="txt"  rows="5" data-fld></textarea>
+                        <label class="lbl" for="txt">Сообщение</label>
+                    </div>
+
+                    <button type="submit">
+                        <span>Отправить сообщение</span>
+                    </button>
+                </form>
+
+            </div>
+
+            <!-- интересная кнопка https://codepen.io/sean_codes/pen/EWJyqe -->
+        </section>
+
+        <section class="performances">
+            <h2>Мои доклады</h2>
+            <h3 class="nav-menu">
+                <button data-href="regexp"><span>Не бойтесь регулярных выражений</span></button>
+                <button data-href="accessibility"><span>Разработка доступных интерфейсов️</span></button>
+            </h3>
+        </section>
+
+        <section class="regexp">
+            <h2>Не бойтесь регулярных выражений</h2>
+            <video src=""></video>
+        </section>
+
+        <section class="accessibility">
+            
+        </section>
+
+        <button class="back-button" data-href="main-page">
+            <p>Назад</p>
+            <canvas id="back-btn"></canvas>
+        </button>
+    </div>
+
+    <script src="./js/TweenMax.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/fluid.js"></script>
+    <script src="./js/back-btn.js"></script>
+</body>
+</html>

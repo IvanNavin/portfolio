@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Russo One', sans-serif;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    user-select: none;
+
+}
+
+html, body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 60px #000 inset !important;
+    caret-color: #fff;
+    background-color: #000 !important;
+}
+
+.main-page,
+.performances,
+.my-works,
+.contacts,
+.about,
+.regexp,
+.accessibility {
+    display: none;
+}
+
+[data-nav-wrapper="main-page"] .main-page,
+[data-nav-wrapper="about"] .about,
+[data-nav-wrapper="my-works"] .my-works,
+[data-nav-wrapper="contacts"] .contacts,
+[data-nav-wrapper="performances"] .performances,
+[data-nav-wrapper="regexp"] .regexp,
+[data-nav-wrapper="accessibility"] .accessibility {
+    display: block;
+}
+
+section {
+    padding: 32px;
+}
+
+.mobile-platform section {
+    padding: 16px;
+}
+
+h2 {
+    font-size: 36px;
+    margin: 23px 0 40px;
+}
+
+.back-button {
+    background: transparent;
+    border: none;
+    outline: transparent;
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-align: right;
+    z-index: 1;
+}
+
+.back-button p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.back-button.hover {
+    cursor: pointer;
+}
+
+[data-nav-wrapper="main-page"] .back-button {
+    display: none;
+}
+
+/* Main Page */
+
+.main-page {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    padding: 0 !important;
+}
+
+.main-page #fluid {
+    width: 100%;
+    height: 100%;
+}
+
+.mobile-platform .main-page #fluid {
+    pointer-events: none;
+}
+
+.main-page img {
+    width: 50%;
+    max-width: 666px;
+    max-height: 100vh;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: fadeInWithScale 1s forwards;
+    transform-origin: bottom right;
+    pointer-events: none;
+}
+
+body.mobile-platform .main-page img {
+    width: 100%;
+    right: -37%;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 114px;
+    transform: translateY(-50%);
+}
+
+body.mobile-platform .nav-menu {
+    left: 40px;
+}
+
+.nav-menu button {
+    display: flex;
+    align-self: flex-start;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-size: 8vw;
+    overflow: hidden;
+    outline: transparent;
+}
+
+.nav-menu button span {
+    opacity: 0;
+    position: relative;
+    transition: margin ease-in-out .4s, opacity ease-in-out .4s;
+    white-space: nowrap;
+}
+
+.nav-menu button span:hover {
+    margin-left: 40px;
+}
+
+.main-page .nav-menu button span::before {
+    content: attr(data-name-button)
+}
+
+.main-page .nav-menu button:hover span::before,
+.tapped .nav-menu button span::before {
+    content: attr(data-second-name-button);
+}
+
+.nav-menu button:first-child span {
+    animation: slideText 1s forwards;
+}
+
+.nav-menu button:nth-child(2) span {
+    animation: slideText 1s forwards 1s;
+}
+
+.nav-menu button:nth-child(3) span {
+    animation: slideText 1s forwards 1.5s;
+}
+
+.nav-menu button:nth-child(4) span {
+    animation: slideText 1s forwards 2s;
+}
+
+.nav-menu button:first-child {
+    color: #fff;
+}
+
+.nav-menu button:not(:first-child) {
+    color: #ea0f1e;
+}
+
+.tap-indication {
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    bottom: 4%;
+    font-size: 3.6vmin;
+    animation: bounce .5s infinite alternate;
+}
+
+.tap-indication:before {
+    content: 'slide';
+}
+
+.mobile-platform .tap-indication:before {
+    content: 'tap';
+}
+
+.main-page .help {
+    position: absolute;
+    color: #313131;
+    bottom: 5px;
+    left: 5px;
+    font-size: 7px;
+}
+
+.mobile-platform .main-page .help {
+    display: none;
+}
+
+/* About page */
+
+.about {
+    color: #fbfbfb;
+}
+
+.facts-header {
+    text-align: right;
+    margin-top: 48px;
+}
+
+.facts {
+    text-align: right;
+    list-style: none;
+}
+
+/* My works page*/
+
+.my-works .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.my-works button {
+    border: 1px solid white;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    margin: 0 5px 2em;
+    max-width: 160px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    background-color: transparent;
+    outline: transparent;
+}
+
+.my-works button::before {
+    content: '';
+    background-color: #fff;
+    height: 155px;
+    left: -95px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 70px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.my-works button:hover::before {
+    left: 120%;
+}
+
+/* contacts */
+
+.contacts .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+@media screen and (max-width: 420px) {
+    .contacts .wrapper {
+        margin: 100px auto 0;
+    }
+}
+
+.contacts h2 {
+    text-align: center;
+}
+
+.form-block {
+    width: 272px;
+    min-width: 272px;
+    max-width: 272px;
+    position: relative;
+    margin: 0 0 16px 0;
+}
+
+.fld,
+.textarea {
+    width: 100%;
+    height: 48px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: transparent;
+    color: white;
+    padding: 16px;
+}
+
+.textarea {
+    min-width: 272px;
+    max-width: 272px;
+    height: 200px;
+}
+
+.lbl {
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    transform-origin: left top;
+    pointer-events: none;
+    transition: transform ease-in-out .2s,
+                opacity ease-in-out .2s,
+                top ease-in-out .2s;
+}
+
+.fld:focus {
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+[data-form="static"] .lbl,
+.fld:focus ~ .lbl,
+.fld-complete .lbl,
+.fld-focus .lbl {
+    transform: scale(0.5);
+    opacity: .5;
+    top: 7px;
+}
+
+.contacts button {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 45px;
+    width: 100%;
+    max-width: 272px;
+    background-color: transparent;
+    outline: transparent;
+}
+
+.contacts button:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url("../img/send.svg") center/cover no-repeat;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    transform: rotateZ(-45deg) rotateX(25deg) rotateY(15deg);
+    transform-origin: center;
+    transition: all 0.25s;
+}
+
+.contacts button:hover:before {
+    border-color: white;
+    transform: rotateZ(0) rotateX(0) rotateY(0) translateX(-13px);
+}
+
+.contacts button:active {
+    top: 1px
+}
+
+/* performances */
+
+.performances button {
+    font-size: 3vw;
+}
+
+
+/* Keyframes */
+
+@keyframes fadeInWithScale {
+    from {
+        opacity: .5;
+        transform: scale(1.1);
+    }
+    to   {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideText {
+    0% {
+        opacity: 0;
+        top: 30vh
+    }
+    100% {
+        opacity: 1;
+        top: 0
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
