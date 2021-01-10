@@ -53,7 +53,7 @@ pointers.push(new pointerPrototype());
 
 const { gl, ext } = getWebGLContext(canvas);
 
-if (isMobile()) {
+if (isMob()) {
     config.DYE_RESOLUTION = 512;
 }
 if (!ext.supportLinearFiltering) {
@@ -149,10 +149,6 @@ function supportRenderTextureFormat (gl, internalFormat, format, type) {
 
     let status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
     return status == gl.FRAMEBUFFER_COMPLETE;
-}
-
-function isMobile () {
-    return /Mobi|Android/i.test(navigator.userAgent);
 }
 
 function framebufferToTexture (target) {
@@ -1332,7 +1328,7 @@ window.addEventListener('keydown', e => {
         splatStack.push(parseInt(Math.random() * 20) + 5);
 });
 
-if (isMobile()) {
+if (isMob()) {
     setInterval(e => {
         splatStack.push(parseInt(Math.random() * 20) + 5);
     }, 10000);
