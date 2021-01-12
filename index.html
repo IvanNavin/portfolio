@@ -6,7 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="./styles/main.css">
     <script type="text/javascript" src="./js/email.min.js"></script>
     <title>Ivan Portfolio</title>
@@ -37,7 +43,7 @@
             <h2 class="facts-header">Случайные факты:</h2>
             <ul class="facts" data-facts></ul>
         </section>
-
+        <!-- My works -->
         <section class="my-works" data-works="show-all">
 
             <h2>Мои работы</h2>
@@ -47,16 +53,142 @@
             <ul class="wrapper"></ul>
         </section>
 
-        <section class="pokedex">
+        <section class="work pokedex">
             <h2>Pokedex</h2>
 
+            <img src="./img/pokedex-home.png">
+
+            <p>Pokedex - это результат продвинутого Реакт марафона, который проводит Зар Захаров</p>
+            <p>В этом марафоне мне очень понравился дизайн</p>
+            <p>В дизайне был kit - набор и названия всех цветов, градиентов, шрифты и их размеры и т.д.</p>
+            <p>Входе марафона я реализовал в этом проэкте следующие технологии:</p>
+            <br/>
+            <ul>
+                <li>React</li>
+                <li>Hook</li>
+                <li>HookRouter</li>
+                <li>Redux</li>
+                <li>Webpack</li>
+                <li>TypeScript</li>
+                <li>ESLint</li>
+                <li>Axios</li>
+                <li>Jest</li>
+                <li>SSR</li>
+                <li>Hapi</li>
+            </ul>
+
+            <br/>
+            <a href="https://pokedex777.vercel.app/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                    <defs>
+                        <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                    </defs>
+                    <text dy="70" textLength="1220">
+                        <textPath xlink:href="#textcircle">Результат смотрим тут</textPath>
+                    </text>
+                </svg>
+            </a>
+            <a href="https://github.com/IvanNavin/Pokedex777" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                    <defs>
+                        <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                    </defs>
+                    <text dy="70" textLength="1220" style="letter-spacing: 38px">
+                        <textPath xlink:href="#textcircle">Код смотрим тут</textPath>
+                    </text>
+                </svg>
+            </a>
+        </section>
+
+        <section class="work thanos-effect">
+            <h2>Thanos Effect</h2>
+
+            <p>Работая в EvoPlay мне поступила задача: воспроизвести эфект Таноса.</p>
+            <p>Что нужно сделать?</p>
+            <p>Нужно сделать распад картинок, как в фильме Мстители 3: Война бесконечности. Картинки должны распадаться на пепел и разлетаться по ветру.</p>
+            <p>Немного полапатив интернет, я обнаружил много примеров данной реализации.</p>
+            <p>Все примеры которые я находил, были сделаны с библиотекой html2canvas, меня это немного не устраивало! Т.к. мне нужно разщиплять на атомы только картинки а не любой контент. А для этих целей подойдут и обычные средства canvas</p>
+
+
+            <a href="https://destructurizator.netlify.app/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                    <defs>
+                        <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                    </defs>
+                    <text dy="70" textLength="1220">
+                        <textPath xlink:href="#textcircle">Результат смотрим тут</textPath>
+                    </text>
+                </svg>
+            </a>
+            <a href="https://github.com/IvanNavin/destructurizator" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                    <defs>
+                        <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                    </defs>
+                    <text dy="70" textLength="1220" style="letter-spacing: 38px">
+                        <textPath xlink:href="#textcircle">Код смотрим тут</textPath>
+                    </text>
+                </svg>
+            </a>
+        </section>
+
+        <section class="work portfolio">
+            <h2>Portfolio</h2>
+
+            <img src="./img/portfolio.png" alt="Фото главной страницы">
+            <p>Я считаю, что это важно иметь профессиональный сайт портфолио, который отображает все мои проекты и достижения.</p>
+            <p>Сначала я и не представлял как должен выглядеть сайт партфолио и что в нём должно быть. Я начал гуглить и читать статьи, что должно быть в портфолио.</p>
+            <p>Я составил план, определился с цветовой схемой, набросал пару идей. И принялся за разработку. Я понимал, что Он должен быть уникальным и креативным. Фух, это было сложно!</p>
+            <p>Сначала я принялся за главную страницу. Я подумал - это должно быть что-то креативное и уникальное, в моем случае я использовал эффект fluid. Библиотеки я такой не нашёл но нашёл места где этот эффект приминялся и по заимствовал его от туда - немного преобразив его по своему.</p>
+            <p>Дальше пользователь может перейти на страницу «Обо мне» - на этой странице будет личная история, стэк технологий которыми я владею, опыт в работе и случайные факты обо мне =)</p>
+            <p>Пользователь может перейти на страницу проектов (здесь будут жить все лучшие проекты с описанием используемых технологий и ссылками на Github и живые видеодемонстрации).</p>
+            <p>Пользователь может перейти на страницу «контакты» и связаться со мной.</p>
+            <p>Пользователь может перейти на страницу моих докладов и почерпнуть те знания которыми я делюсь с другими.</p>
+            <p>В начале написания кода я думал, каким стэком будет обладать мой сайт портфолио. Я очень хотел написать его на React но поймите меня правильно во время написания кода я владел базовыми знаниями React и вполне достаточными знаниями ES6. Я понимал, что мне нужно настраивать и добавлять функции так, что бы это демонстрировало мои навыки в программировании.</p>
+            <p>Основная цель этого веб-сайта-портфолио - продемонстрировать проекты, которые я создал, ну и конечно же сам сайт также считается проектом! Это страница моих проектов, на которой представлены проекты, созданные мной:</p>
+            <img src="./img/my-works.png" alt="Фото страницы мои работы">
+
+            <a href="" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                    <defs>
+                        <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                    </defs>
+                    <text dy="70" textLength="1220" style="letter-spacing: 38px">
+                        <textPath xlink:href="#textcircle">Код смотрим тут</textPath>
+                    </text>
+                </svg>
+            </a>
 
         </section>
 
-        <section class="thanos-effect">
-            <h2>Thanos Effect</h2>
+        <section class="work english-learn">
+            <h2>English learn</h2>
 
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
 
+            <a href="https://english-learn777.netlify.app/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                    <defs>
+                        <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                    </defs>
+                    <text dy="70" textLength="1220">
+                        <textPath xlink:href="#textcircle">Результат смотрим тут</textPath>
+                    </text>
+                </svg>
+            </a>
+            <a href="" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                    <defs>
+                        <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+                    </defs>
+                    <text dy="70" textLength="1220" style="letter-spacing: 38px">
+                        <textPath xlink:href="#textcircle">Код смотрим тут</textPath>
+                    </text>
+                </svg>
+            </a>
         </section>
 
         <section class="contacts">
@@ -101,7 +233,7 @@
 
         <section class="report regexp">
             <h2>Не бойтесь регулярных выражений</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZJw-nqtDrWc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="&origin=https://www.youtube.com/embed/ZJw-nqtDrWc&origin=https://golovko-ivan.netlify.app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <h2>Полезные ссылки</h2>
             <div class="hrefs">
                 <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F" target="_blank">Регулярные выражения на википедии</a>
@@ -114,13 +246,13 @@
 
         <section class="report accessibility">
             <h2>Разработка доступных интерфейсов</h2>
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/c1W9u6SN2Cw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/c1W9u6SN2Cw&origin=https://golovko-ivan.netlify.app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <h2>Ссылка на доклад</h2>
             <a href="https://developing-accessible-interfaces.netlify.app/" target="_blank">https://developing-accessible-interfaces.netlify.app/</a>
         </section>
 
-        <button class="back-button" data-href="main-page">
-            <p>Иван</p>
+        <button class="back-button" onclick="history.back()">
+            <p>Назад</p>
             <canvas id="back-btn"></canvas>
         </button>
     </div>

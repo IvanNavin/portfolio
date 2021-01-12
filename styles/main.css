@@ -18,6 +18,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     background-color: #000;
     color: #fff;
@@ -39,7 +43,9 @@ input:-webkit-autofill:active  {
 .my-works,
 .pokedex,
 .contacts,
+.portfolio,
 .thanos-effect,
+.english-learn,
 .performances,
 .regexp,
 .accessibility {
@@ -51,6 +57,8 @@ input:-webkit-autofill:active  {
 [data-nav-wrapper="my-works"] .my-works,
 [data-nav-wrapper="pokedex"] .pokedex,
 [data-nav-wrapper="thanos-effect"] .thanos-effect,
+[data-nav-wrapper="english-learn"] .english-learn,
+[data-nav-wrapper="portfolio"] .portfolio,
 [data-nav-wrapper="contacts"] .contacts,
 [data-nav-wrapper="performances"] .performances,
 [data-nav-wrapper="regexp"] .regexp,
@@ -69,6 +77,10 @@ section {
 h2 {
     font-size: 36px;
     margin: 23px 0 40px;
+}
+
+img {
+    width: 100%;
 }
 
 h2:first-child {
@@ -117,7 +129,8 @@ a {
     transition: margin ease-in-out .2s;
 }
 
-a:hover {
+.main-page a:hover,
+.performances a:hover {
     margin-left: 10px;
 }
 
@@ -287,43 +300,6 @@ body.mobile-platform .nav-menu {
     margin: 0 auto;
 }
 
-.my-works button {
-    border: 1px solid white;
-    overflow: hidden;
-    position: relative;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 45px;
-    margin: 0 5px 2em;
-    max-width: 160px;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100%;
-    background-color: transparent;
-    outline: transparent;
-}
-
-.my-works button::before {
-    content: '';
-    background-color: #fff;
-    height: 155px;
-    left: -95px;
-    opacity: 0.2;
-    position: absolute;
-    top: -50px;
-    transform: rotate(35deg);
-    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-    width: 70px;
-    font-weight: bold;
-    z-index: 1;
-}
-
-.my-works button:hover::before {
-    left: 120%;
-}
-
 .my-works .item {
     display: block;
     width: 50%;
@@ -343,6 +319,11 @@ body.mobile-platform .nav-menu {
     }
 }
 
+.my-works .screen {
+    width: 100%;
+    cursor: pointer;
+}
+
 .my-works .item:hover .tags::before,
 .my-works .item:hover .img {
     opacity: 1;
@@ -351,16 +332,6 @@ body.mobile-platform .nav-menu {
 
 .my-works .item:hover .tags li {
     animation: .4s delay var(--delay) forwards;
-}
-
-@keyframes delay {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0,0,0);
-    }
 }
 
 .my-works h5 {
@@ -458,7 +429,7 @@ body.mobile-platform .nav-menu {
 
 .my-works .main::after {
     z-index: 0;
-    /*background-image: url()!important;*/
+    background-image: url('../img/monk.png') !important;
     background-color: #333;
     background-blend-mode: initial;
     background-size: auto 75px;
@@ -579,6 +550,7 @@ body.mobile-platform .nav-menu {
     margin: 5px;
     padding: 0 5px;
     border: 1px solid white;
+    color: #fff;
     opacity: 0;
     backface-visibility: hidden;
     transform-origin: 50% 50% -10px;
@@ -587,7 +559,52 @@ body.mobile-platform .nav-menu {
     transition: transform .285s cubic-bezier(.5,1.5,.5,1.5);
 }
 
+.work::after {
+    content: '';
+    display: table;
+    clear: both;
+}
 
+.work img {
+    width: auto;
+    max-width: 100%;
+    max-height: 500px;
+    margin-bottom: 16px;
+}
+
+.work ul {
+    width: 100px;
+    margin-left: 30px;
+    float: left;
+}
+
+.work a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+.work svg {
+    width: 100px;
+    transition: transform linear .2s;
+}
+
+.work a {
+    background: url(../img/monk.png) center no-repeat;
+    background-size: 30px;
+}
+
+.work a:hover svg {
+    transform: rotate3d(-1, 1, 1, -65deg) scale(1.5) ;
+}
+.work text {
+    font-size: 63px;
+    text-transform: uppercase;
+    letter-spacing: 17px;
+    fill: white;
+    transform-origin: center;
+    animation: rotate linear infinite 15s;
+}
 
 /* contacts */
 
@@ -797,5 +814,24 @@ body.mobile-platform .nav-menu {
     50% {
         color: blue;
         transform: translateY(-5px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate3d(1, 1, 1, 65deg) rotate(0);
+    }
+    to {
+        transform: rotate3d(1, 1, 1, 65deg) rotate(360deg);
+    }
+}
+
+@keyframes delay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0,0,0);
     }
 }

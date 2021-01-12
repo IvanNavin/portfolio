@@ -47,17 +47,23 @@
     links.forEach(link => link.addEventListener('click', function (e) {
         e.preventDefault();
         const linkName = this.dataset.href;
-        console.log('linkName:', linkName);
+
         navigationWrapper.dataset.navWrapper = linkName;
         router.navigate(linkName);
     }));
     const path = router.getFragment() ? router.getFragment() : 'main-page';
 
     router.add(path, () => {
-            navigationWrapper.dataset.navWrapper = path
+            navigationWrapper.dataset.navWrapper = path;
         })
-        // .add('', () => {
-        //     // general controller
-        //     console.log('welcome in catch all controller');
-        // });
+
+
+    window.addEventListener('hashchange', _ => {
+        const hash = window.location.hash.split('#')[1];
+
+        if (hash !== navigationWrapper.dataset.navWrapper) {
+            navigationWrapper.dataset.navWrapper = hash;
+        }
+    })
+
 })();

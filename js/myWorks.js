@@ -8,14 +8,28 @@
             dataHref: 'pokedex',
             backUrl: './img/pokedex-home.png',
             frontUrl: './img/pokedex-desktop.png',
-            stack: ['React', 'SSR', 'Scss', 'HookRouter', 'TS', 'Es-Lint']
+            stack: ['React', 'Redux', 'SSR', 'Scss', 'HookRouter', 'TS', 'Es-Lint']
         },
         1: {
             name: 'Thanos Effect',
             dataHref: 'thanos-effect',
             backUrl: './img/thanos-back.jpeg',
             frontUrl: './img/thanos.jpg',
-            stack: ['HTML', 'CSS', 'JS', 'Canvas']
+            stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
+        },
+        2: {
+            name: 'Portfolio',
+            dataHref: 'portfolio',
+            backUrl: './img/portfolio.png',
+            frontUrl: '',
+            stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
+        },
+        3: {
+            name: 'English learn',
+            dataHref: 'english-learn',
+            backUrl: '',
+            frontUrl: '',
+            stack: ['React', 'Redux', 'SCSS', 'Firebase']
         }
     }
 
@@ -24,13 +38,13 @@
 
         return `
             <li class="item">
-                <a href="#" class="screen" data-href="${dataHref}">
+                <button class="screen" data-href="${dataHref}">
                     <div class="bar">
                         <h5>${name}</h5>
                         <i></i>
                     </div>
                     <div class="main">
-                        <img class="back" src="${backUrl}" alt="">
+                        ${backUrl ? '<img class="back" src="' + backUrl + '" alt="">' : ''}
                         <div class="tags">
                             <ul>
                                 ${stack.map(item => {
@@ -39,10 +53,10 @@
                             </ul>
                         </div>
                         <picture class="img">
-                            <img src="${frontUrl}" alt="">
+                            ${frontUrl ? '<img src="' + frontUrl + '" alt="">' : ''}
                         </picture>
                     </div>
-                </a>
+                </button>
             </li>
         `;
     }
