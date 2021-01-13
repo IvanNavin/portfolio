@@ -13,13 +13,14 @@
     <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#b91d47">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./styles/preloader.css">
     <link rel="stylesheet" href="./styles/main.css">
     <script type="text/javascript" src="./js/email.min.js"></script>
     <title>Ivan Portfolio</title>
 </head>
 <body>
 <!-- кнопка назад https://codepen.io/corentinfardeau/pen/wzpXBQ -->
-    <div class="wrapper" data-nav-wrapper="main-page">
+    <div class="wrapper" data-nav-wrapper="loader">
         <section class="main-page">
             <canvas id="fluid"></canvas>
             <img src="./img/iam-wb-1.png" alt="in the photo Ivan in a blue shirt">
@@ -76,6 +77,10 @@
                 <li>SSR</li>
                 <li>Hapi</li>
             </ul>
+
+            <p>На самом деле в этом марафоне много интересных моментов.</p>
+            <p>Весь проэкт написан на хуках. В нём нету ни одного жизненного цикла React. Всё под копотом</p>
+            <p></p>
 
             <br/>
             <a href="https://pokedex777.vercel.app/" target="_blank">
@@ -139,12 +144,13 @@
             <p>Я считаю, что это важно иметь профессиональный сайт портфолио, который отображает все мои проекты и достижения.</p>
             <p>Сначала я и не представлял как должен выглядеть сайт партфолио и что в нём должно быть. Я начал гуглить и читать статьи, что должно быть в портфолио.</p>
             <p>Я составил план, определился с цветовой схемой, набросал пару идей. И принялся за разработку. Я понимал, что Он должен быть уникальным и креативным. Фух, это было сложно!</p>
-            <p>Сначала я принялся за главную страницу. Я подумал - это должно быть что-то креативное и уникальное, в моем случае я использовал эффект fluid. Библиотеки я такой не нашёл но нашёл места где этот эффект приминялся и по заимствовал его от туда - немного преобразив его по своему.</p>
+            <p>Сначала пользователь попадает на главную страницу. Я подумал - это должно быть что-то креативное и уникальное, в моем случае я использовал эффект fluid. Библиотеки я такой не нашёл, но нашёл места где этот эффект приминялся и по заимствовал его от туда - немного преобразив его по своему.</p>
             <p>Дальше пользователь может перейти на страницу «Обо мне» - на этой странице будет личная история, стэк технологий которыми я владею, опыт в работе и случайные факты обо мне =)</p>
+            <p>На этом этапе я подумал, что было бы хорошо добавить кнопку назад. Нашёл интересную канвас анимацию и применил её к кнопке "Назад".</p>
             <p>Пользователь может перейти на страницу проектов (здесь будут жить все лучшие проекты с описанием используемых технологий и ссылками на Github и живые видеодемонстрации).</p>
             <p>Пользователь может перейти на страницу «контакты» и связаться со мной.</p>
             <p>Пользователь может перейти на страницу моих докладов и почерпнуть те знания которыми я делюсь с другими.</p>
-            <p>В начале написания кода я думал, каким стэком будет обладать мой сайт портфолио. Я очень хотел написать его на React но поймите меня правильно во время написания кода я владел базовыми знаниями React и вполне достаточными знаниями ES6. Я понимал, что мне нужно настраивать и добавлять функции так, что бы это демонстрировало мои навыки в программировании. Поэтому я написал его на нативном JS</p>
+            <p>В начале написания кода я незнал, каким стэком будет обладать мой сайт портфолио. Я очень хотел написать его на React но поймите меня правильно во время написания кода я владел базовыми знаниями React и вполне достаточными знаниями ES6. Я понимал, что мне нужно настраивать и добавлять функции так, что бы это демонстрировало мои навыки в программировании. Поэтому я написал его на нативном JS</p>
             <p>Основная цель этого веб-сайта-портфолио - продемонстрировать проекты, которые я создал, ну и конечно же сам сайт также считается проектом! </p>
 
             <a href="" target="_blank">
@@ -163,11 +169,12 @@
         <section class="work english-learn">
             <h2>English learn</h2>
 
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-
+            <p>English learn - это результат Реакт-марафона от Зара Захарова</p>
+            <p>В ходе этого марафона мы познакомились с React и его жизненными циклами, научились работать с формами и с сервером "Firebase". Научились работать с пропсами и стейтом, пробрасывали их через компоненты и обратно. Для начала написали самописный редакс, что бы понимать как он работает и в последствии подключили его. Иконки мы брали из AntD Icons. Подключили апишку словаря и использовали хранилище firebase для запоминания слов юзера. Прикрутили React Router и Thunk.</p>
+            <br/>
+            <p>Логин: reactmarathon@gmail.com</p>
+            <p>Пароль: 12345678</p>
+            <br/>
             <a href="https://english-learn777.netlify.app/" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
                     <defs>
@@ -178,7 +185,7 @@
                     </text>
                 </svg>
             </a>
-            <a href="" target="_blank">
+            <a href="https://github.com/IvanNavin/EnglishLearn/" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
                     <defs>
                         <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
@@ -250,10 +257,80 @@
             <a href="https://developing-accessible-interfaces.netlify.app/" target="_blank">https://developing-accessible-interfaces.netlify.app/</a>
         </section>
 
-        <button class="back-button" onclick="history.back()">
-            <p>Назад</p>
+        <button class="back-button" data-href="main-page">
+            <p>Иван</p>
             <canvas id="back-btn"></canvas>
         </button>
+
+        <section class="loader">
+            <div class="preloader">
+                <div class="preloader__ring">
+                    <div class="preloader__sector">L</div>
+                    <div class="preloader__sector">o</div>
+                    <div class="preloader__sector">a</div>
+                    <div class="preloader__sector">d</div>
+                    <div class="preloader__sector">i</div>
+                    <div class="preloader__sector">n</div>
+                    <div class="preloader__sector">g</div>
+                    <div class="preloader__sector">.</div>
+                    <div class="preloader__sector">.</div>
+                    <div class="preloader__sector">.</div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                </div>
+                <div class="preloader__ring">
+                    <div class="preloader__sector">L</div>
+                    <div class="preloader__sector">o</div>
+                    <div class="preloader__sector">a</div>
+                    <div class="preloader__sector">d</div>
+                    <div class="preloader__sector">i</div>
+                    <div class="preloader__sector">n</div>
+                    <div class="preloader__sector">g</div>
+                    <div class="preloader__sector">.</div>
+                    <div class="preloader__sector">.</div>
+                    <div class="preloader__sector">.</div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                    <div class="preloader__sector"></div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <script src="./js/TweenMax.min.js"></script>

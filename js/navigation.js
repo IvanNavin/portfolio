@@ -1,10 +1,8 @@
 (function () {
     const navigationWrapper = document.querySelector('[data-nav-wrapper]');
-    const navMenu = document.querySelector('[data-nav-menu]')
-
-    if (navigationWrapper.dataset.navWrapper === '') {
-        navigationWrapper.dataset.navWrapper = 'main-page'
-    }
+    const navMenu = document.querySelector('[data-nav-menu]');
+    const router = new Router({mode: 'hash', root: '/'});
+    const path = router.getFragment() ? router.getFragment() : 'main-page';
 
     const buttons = {
         0: {
@@ -29,10 +27,9 @@
         },
     };
 
-    const router = new Router({
-        mode: 'hash',
-        root: '/'
-    });
+    if (navigationWrapper.dataset.navWrapper === '') {
+        navigationWrapper.dataset.navWrapper = 'main-page';
+    }
 
     Object.values(buttons).forEach(button => {
         const html = `
@@ -51,12 +48,13 @@
         navigationWrapper.dataset.navWrapper = linkName;
         router.navigate(linkName);
     }));
-    const path = router.getFragment() ? router.getFragment() : 'main-page';
 
-    router.add(path, () => {
+    setTimeout(_ => {
+        navigationWrapper.dataset.navWrapper = path;
+        router.add(path, () => {
             navigationWrapper.dataset.navWrapper = path;
-        })
-
+        });
+    }, 2000);
 
     window.addEventListener('hashchange', _ => {
         const hash = window.location.hash.split('#')[1];
