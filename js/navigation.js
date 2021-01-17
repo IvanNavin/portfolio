@@ -61,16 +61,23 @@ const navigation = () => {
         }, 400);
     }));
 
-    navigationWrapper.dataset.navWrapper = path;
-    router.add(path, () => {
+
+    window.addEventListener('load', () => {
         navigationWrapper.dataset.navWrapper = path;
+        router.add(path, () => {
+            navigationWrapper.dataset.navWrapper = path;
+        });
     });
 
     window.addEventListener('hashchange', _ => {
-        const hash = window.location.hash.split('#')[1];
+        const hash = window.location.hash.split('#')[1] || 'main-page';
+        const fadeInElement = document.querySelector('.fadein');
+        const fadeOutElement = document.querySelector('.fadeout');
 
         if (hash !== navigationWrapper.dataset.navWrapper) {
             navigationWrapper.dataset.navWrapper = hash;
+            fadeInElement && fadeInElement.classList.remove('fadein');
+            fadeOutElement && fadeOutElement.classList.remove('fadeout');
         }
     })
 }
@@ -92,7 +99,5 @@ const preloader = _ => {
 
 (function () {
     preloader();
-    window.addEventListener('load', () => {
-        navigation();
-    });
+    navigation();
 })();
