@@ -816,6 +816,10 @@ body.mobile-platform .nav-menu {
 }
 
 .report iframe {
+    width: calc(100vw - 64px);
+}
+
+.mobile-platform .report iframe {
     width: calc(100vw - 32px);
 }
 
