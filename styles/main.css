@@ -67,7 +67,7 @@ body::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.loader,
+.loader.loader,
 .main-page,
 .about,
 .my-works,
@@ -374,6 +374,7 @@ body.mobile-platform .nav-menu {
 .my-works .screen {
     width: 100%;
     cursor: pointer;
+    outline: transparent;
 }
 
 .my-works .item:hover .tags::before,
@@ -597,6 +598,20 @@ body.mobile-platform .nav-menu {
     transform-style: preserve-3d;
 }
 
+.my-works .status {
+    display: inline-block;
+    width: 120px;
+    position: absolute;
+    top: 21px;
+    right: -30px;
+    z-index: 11;
+    transform: rotate(45deg);
+    line-height: 1.5;
+    background: #ea0f1e;
+    color: #fff;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .9);
+}
+
 .my-works .tags li {
     display: inline-block;
     margin: 5px;
@@ -792,6 +807,10 @@ body.mobile-platform .nav-menu {
 
 /* performances */
 
+.performances {
+    height: 100vh;
+}
+
 .performances button {
     font-size: 3vw;
 }
@@ -806,6 +825,22 @@ body.mobile-platform .nav-menu {
 
 .report .hrefs a:not(:first-child) {
     color: #ea0f1e;
+}
+
+.work video {
+    width: 100%;
+}
+
+.report video::-webkit-media-controls {
+    display:none !important;
+}
+
+.fadeout {
+    animation: fadeOut .4s linear forwards;
+}
+
+.fadein {
+    animation: fadeIn .4s linear forwards;
 }
 
 /* Keyframes */
@@ -875,5 +910,27 @@ body.mobile-platform .nav-menu {
     to {
         opacity: 1;
         transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }

@@ -4,24 +4,26 @@
     const myWorksWrapper = myWorksContainer.querySelector('ul.wrapper');
     const works = {
         0: {
+            name: 'Portfolio',
+            status: 'New',
+            dataHref: 'portfolio',
+            backUrl: './img/portfolio.png',
+            frontUrl: '',
+            stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
+        },
+        1: {
             name: 'Pokedex',
+            status: 'in process',
             dataHref: 'pokedex',
             backUrl: './img/pokedex-home.png',
             frontUrl: './img/pokedex-desktop.png',
             stack: ['React', 'Redux', 'SSR', 'Scss', 'HookRouter', 'TS', 'Es-Lint']
         },
-        1: {
+        2: {
             name: 'Thanos Effect',
             dataHref: 'thanos-effect',
             backUrl: './img/thanos-back.jpeg',
             frontUrl: './img/thanos.jpg',
-            stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
-        },
-        2: {
-            name: 'Portfolio',
-            dataHref: 'portfolio',
-            backUrl: './img/portfolio.png',
-            frontUrl: '',
             stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
         },
         3: {
@@ -33,12 +35,13 @@
         }
     }
 
-    const template = ({name, dataHref, backUrl, frontUrl, stack}) => {
+    const template = ({name, status, dataHref, backUrl, frontUrl, stack}) => {
         let delay = 3;
 
         return `
             <li class="item">
                 <button class="screen" data-href="${dataHref}">
+                    ${status ? '<span class="status">' + status + '</span>' : ''}
                     <div class="bar">
                         <h5>${name}</h5>
                         <i></i>

@@ -144,6 +144,14 @@
     transform: rotateY(348deg) translateZ(7rem);
 }
 
+.progress {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'RussoOneRegular', sans-serif;
+    font-size: 10px;
+}
+
 /* Animations */
 @keyframes tiltSpin {
     from {

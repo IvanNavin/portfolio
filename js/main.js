@@ -4,8 +4,7 @@ window.isMob = function() {
     return check;
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-
+const mobOrDescHandler = _ => {
     const mainPage = document.querySelector('.main-page');
     const toggleTap = function () {
         this.classList.toggle('tapped')
@@ -23,7 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     resize();
     window.addEventListener('resize', resize);
+}
 
+document.addEventListener('DOMContentLoaded', function () {
+
+    mobOrDescHandler();
     new formManager();
 
 });
