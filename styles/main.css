@@ -689,7 +689,7 @@ body.mobile-platform .nav-menu {
     background-image: url('../img/light_dots.png');
     background-size: 100%;
     filter: brightness(200%);
-    z-index: -1;
+    pointer-events: none;
 }
 
 .contacts .wrapper::before {
