@@ -664,6 +664,9 @@ body.mobile-platform .nav-menu {
 }
 
 /* contacts */
+.contacts {
+    overflow: hidden;
+}
 
 .contacts .wrapper {
     display: flex;
@@ -671,6 +674,52 @@ body.mobile-platform .nav-menu {
     justify-content: center;
     align-items: center;
     margin: auto;
+}
+
+.contacts .wrapper::before,
+.contacts .wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -271px;
+    margin-top: -191px;
+    width: 543px;
+    height: 382px;
+    background-image: url('../img/light_dots.png');
+    background-size: 100%;
+    filter: brightness(200%);
+}
+
+.contacts .wrapper::before {
+    animation: rotateStar 60s linear infinite alternate;
+}
+
+.contacts .wrapper::after {
+    animation: reRotateStar 30s linear infinite normal;
+}
+
+@keyframes rotateStar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes reRotateStar {
+    0% {
+        opacity: 1;
+        background-size: 80%;
+        transform: rotate(-180deg);
+    }
+    100% {
+        opacity: 0;
+        background-size: 280%;
+        transform: rotate(180deg);
+    }
 }
 
 .contacts h2 {

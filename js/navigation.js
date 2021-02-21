@@ -81,8 +81,11 @@ const navigation = () => {
         }
 
         socialLinks();
+        updateIframes();
     })
 }
+
+const updateIframes = _ => document.querySelectorAll('iframe').forEach(iframe => iframe.src = iframe.src);
 
 const socialLinks = _ => {
     const hash = window.location.hash.split('#')[1] || 'main-page';
