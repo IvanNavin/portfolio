@@ -675,8 +675,14 @@ body.mobile-platform .nav-menu {
 
 .contacts h2 {
     text-align: center;
+    margin-top: 77px;
 }
+@media screen and (max-width: 600px) and (orientation: portrait){
+    .contacts h2 {
 
+        margin-right: 100px;
+    }
+}
 .form-block {
     width: 272px;
     min-width: 272px;
@@ -803,6 +809,72 @@ body.mobile-platform .nav-menu {
     opacity: 1;
     --delay: 1s;
     animation: loader 1s var(--delay) infinite ease-in;
+}
+
+.social-links {
+    position: fixed;
+    top: 45px;
+    right: 65px;
+}
+
+.social-link {
+    position: absolute;
+    opacity: 0;
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.social-links.animate .linkedin {
+    animation: linkedin-rotate linear .4s forwards;
+}
+
+.social-links.animate .github {
+    animation: github-rotate .4s linear .4s forwards;
+}
+
+.social-links.animate .instagram {
+    animation: instagram-rotate .8s linear .4s forwards;
+}
+
+.social-links svg:hover {
+    animation: social-hover linear 1s infinite;
+}
+
+@keyframes linkedin-rotate {
+    to {
+        transform: translate(-80px, 0) rotate(-1080deg);
+        opacity: 1;
+    }
+}
+
+@keyframes github-rotate {
+    to {
+        transform: translate(-60px, 60px) rotate(1080deg);
+        opacity: 1;
+    }
+}
+
+@keyframes instagram-rotate {
+    to {
+        transform: translate(0px, 70px) rotate(1080deg);
+        opacity: 1;
+    }
+}
+
+@keyframes social-hover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* performances */

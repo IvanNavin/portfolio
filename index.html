@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
+<!--    <link rel="manifest" href="./site.webmanifest">-->
     <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#b91d47">
     <meta name="theme-color" content="#ffffff">
@@ -20,6 +20,17 @@
     <title>Ivan Portfolio</title>
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
+        <symbol id="github" viewBox="0 0 24 24">
+            <path id="github" fill="#fff" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </symbol>
+        <symbol id="linkedin" viewBox="0 0 51 48">
+            <path id="linkedin" fill="#fff" d="M29 21.562s3.26-6.355 10-5.875c6.74.48 11.655 4.877 12 14.688l-10-1.958s-1.052-4.13-5-3.917c-3.948.214-5.183.783-7 2.937-1.817 2.155 0-5.875 0-5.875zM2 17h10v31H2V17zm17 0h10v31H19V17zm22 11h10v20H41V28zM7 1a6 6 0 1 1 0 12A6 6 0 0 1 7 1z"/>
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 24 24">
+            <path id="instagram" fill="#fff" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </symbol>
+    </svg>
     <div class="wrapper" data-nav-wrapper="loader">
         <section class="main-page">
             <canvas id="fluid"></canvas>
@@ -34,15 +45,15 @@
         <section class="about">
             <div class="container">
                 <h2>Всем привет!</h2>
-                <p>С 12 лет я мечтал быть программистом и творить, что-то интересное. Я понимал, что это очень сложно - но меня это не пугало! Я изучал сначала Basic, Pascal и потом Delphi. Но жизнь так сложилась, что мой жизненный путь пошел другим путём. И спустя некоторое время я снова решил заниматься любимым делом. В интернете много бесплатной-доступной информации и я стал изучать Front-end разработку.</p>
+                <p>С 12 лет я мечтал быть программистом и творить, что-то интересное. Я понимал, что это очень сложно - но меня это не пугало! Я изучал сначала Basic, Pascal и потом Delphi. Но жизнь так сложилась, что мой жизненный путь пошел другим путём. И спустя некоторое время я снова решил заниматься любимым делом. В интернете много доступной информации и я стал изучать Front-end разработку.</p>
                 <p>Сейчас я занимаюсь разработкой Front-end приложений, вёрсткой и обслуживанием сайтов.</p>
                 <p>Мне нравится превращать сложные задачи в простые, красивые и интуитивно понятные конструкции.</p>
                 <p>Когда я не пишу код, я играю на гитаре, жарю мясо или уделяю время семье.</p>
-                <p>C 2018 года работаю в компании "EvoPlay"</p>
+                <p>C 2018 года работаю в компании "EvoPlay". В этой компании мне очень, всё нравится! Всегда есть интересные, необычные задачи.</p>
                 <p>Мне нравятся интересные задачи и находить интересные решения для них</p>
                 <p>В компании я стараюсь проявлять свои софт-скилы</p>
                 <p>Провожу доклады и стараюсь быть нужным.</p>
-                <p>Сейчас я работаю с таким стэком:</p>
+                <p>Сейчас я работаю с двумя стэками в одиних проэктах мы используем:</p>
                 <ul class="skills">
                     <li>HTML</li>
                     <li>Twig</li>
@@ -52,10 +63,19 @@
                     <li>GraphQL</li>
                     <li>Gulp</li>
                     <li>Webpack</li>
-                    <li>Git</li>
-                    <li>Figma</li>
-                    <li>Photoshop</li>
-                    <li>Sketch</li>
+                </ul>
+                <p>В других проектах мы используем React:</p>
+                <ul class="skills">
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>Saga</li>
+                    <li>TypeScript</li>
+                    <li>EsLint</li>
+                    <li>SSR</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>Jest</li>
+                    <li>Webpack</li>
                 </ul>
 
                 <p>Паралельно изучаю новые технологии и стараюсь ими делится с другими.</p>
@@ -63,7 +83,7 @@
                 <h2 class="facts-header">Случайные факты:</h2>
                 <ul class="facts" data-facts></ul>
 
-                <a href="./files/CV_Golovko_Ivan.docx" class="download" download="CV_Golovko_Ivan.docx">
+                <a href="./files/CV_Golovko_Ivan.pdf" class="download" download="CV_Golovko_Ivan.docx">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -78,8 +98,8 @@
             <div class="container">
                 <h2>Мои работы</h2>
 
-                <!--            <p>Так как в компании "EvoPlay" я подписал NDA(договор о неразглашении) мне придётся сюда выложить свои курсовые работы</p>-->
-
+                <p>Так как в компании "EvoPlay" я подписал NDA(договор о неразглашении) мне придётся сюда выложить свои курсовые работы</p>
+                <br/>
                 <ul class="wrapper"></ul>
             </div>
         </section>
@@ -110,7 +130,7 @@
                 </ul>
 
                 <p>На самом деле в этом марафоне много интересных моментов.</p>
-                <p>Весь проэкт написан на хуках. В нём нету ни одного жизненного цикла React. Всё под копотом</p>
+                <p>Весь проэкт написан на хуках.</p>
                 <p></p>
 
                 <br/>
@@ -242,6 +262,27 @@
         <section class="contacts">
             <div class="wrapper">
 
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/golovkoivan"
+                       class="social-link linkedin"
+                       title="link to linkedin profile"
+                    >
+                        <svg><use xlink:href="#linkedin"></use></svg>
+                    </a>
+                    <a href="https://github.com/IvanNavin"
+                       class="social-link github"
+                       title="link to github profile"
+                    >
+                        <svg><use xlink:href="#github"></use></svg>
+                    </a>
+                    <a href="https://www.instagram.com/oivangolovko/"
+                       class="social-link instagram"
+                       title="link to instagram profile"
+                    >
+                        <svg><use xlink:href="#instagram"></use></svg>
+                    </a>
+                </div>
+
                 <h2>Сказать привет</h2>
 
                 <form id="contact-form">
@@ -266,8 +307,6 @@
                 </form>
 
             </div>
-
-            <!-- интересная кнопка https://codepen.io/sean_codes/pen/EWJyqe -->
         </section>
 
         <!-- performances -->
@@ -377,9 +416,9 @@
     </div>
 
     <script src="./js/TweenMax.min.js"></script>
+    <script src="./js/myWorks.js"></script>
     <script src="./js/Router.js"></script>
     <script src="./js/navigation.js"></script>
-    <script src="./js/myWorks.js"></script>
     <script src="./js/formManager.js"></script>
     <script src="./js/randomFacts.js"></script>
     <script src="./js/sendForm.js"></script>

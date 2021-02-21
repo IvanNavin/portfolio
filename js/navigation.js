@@ -79,8 +79,24 @@ const navigation = () => {
             fadeInElement && fadeInElement.classList.remove('fadein');
             fadeOutElement && fadeOutElement.classList.remove('fadeout');
         }
+
+        socialLinks();
     })
 }
+
+const socialLinks = _ => {
+    const hash = window.location.hash.split('#')[1] || 'main-page';
+
+    if (hash === 'contacts') {
+        const socialWrapper = document.querySelector('.social-links');
+        if (socialWrapper.classList.contains('animate')) {
+            socialWrapper.classList.remove('animate');
+        }
+        setTimeout(() => {
+            socialWrapper.classList.add('animate');
+        }, 1000);
+    }
+};
 
 const preloader = _ => {
     const allElements = document.querySelectorAll("img,video");
@@ -95,9 +111,10 @@ const preloader = _ => {
     }
 
     Object.values(allElements).forEach(element => element.addEventListener('load', handleEvent, true));
-}
+};
 
 (function () {
     preloader();
     navigation();
+    socialLinks();
 })();
