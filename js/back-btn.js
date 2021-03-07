@@ -79,7 +79,7 @@ const backBtn = (selector) => {
         const canvasCenter = {
             x: canvasPos.left + canvas.width/2,
             y: canvasPos.top + canvas.height/2
-        }
+        };
 
         context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -105,7 +105,7 @@ const backBtn = (selector) => {
             button.classList.add('hover');
         }
 
-        createButton(hover);
+        createButton();
         createShadow(angle);
     }
 }

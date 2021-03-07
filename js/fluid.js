@@ -47,7 +47,7 @@ function pointerPrototype () {
     this.color = [30, 0, 300];
 }
 
-let pointers = [];
+const pointers = [];
 let splatStack = [];
 pointers.push(new pointerPrototype());
 
@@ -149,14 +149,6 @@ function supportRenderTextureFormat (gl, internalFormat, format, type) {
 
     let status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
     return status == gl.FRAMEBUFFER_COMPLETE;
-}
-
-function framebufferToTexture (target) {
-    gl.bindFramebuffer(gl.FRAMEBUFFER, target.fbo);
-    let length = target.width * target.height * 4;
-    let texture = new Float32Array(length);
-    gl.readPixels(0, 0, target.width, target.height, gl.RGBA, gl.FLOAT, texture);
-    return texture;
 }
 
 class Material {
@@ -1001,7 +993,7 @@ function calcDeltaTime () {
 function resizeCanvas () {
     let width = window.innerWidth;
     let height = window.innerHeight;
-    if (canvas.width != width || canvas.height != height) {
+    if (canvas.width !== width || canvas.height !== height) {
         canvas.width = width;
         canvas.height = height;
         return true;
