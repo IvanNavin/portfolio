@@ -686,7 +686,7 @@ body.mobile-platform .nav-menu {
     margin-top: -191px;
     width: 543px;
     height: 382px;
-    background-image: url('../img/light_dots.png');
+    background-image: url('../img/lightDots.png');
     background-size: 100%;
     filter: brightness(200%);
     pointer-events: none;

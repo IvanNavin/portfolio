@@ -1,0 +1,10 @@
+import '@js/TweenMax.min';
+import '@js/myWorks';
+import '@js/Router';
+import '@js/navigation';
+import '@js/formManager';
+import '@js/randomFacts'
+import '@js/sendForm'
+import '@js/main'
+import '@js/fluid'
+import '@js/back-btn';

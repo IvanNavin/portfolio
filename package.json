@@ -1,0 +1,40 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio Golovko Ivan",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanNavin/portfolio.git"
+  },
+  "keywords": [
+    "Golovko",
+    "Ivan",
+    "portfolio",
+    "front",
+    "end",
+    "javascript"
+  ],
+  "author": "Golovko Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanNavin/portfolio/issues"
+  },
+  "homepage": "https://github.com/IvanNavin/portfolio#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.1.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
