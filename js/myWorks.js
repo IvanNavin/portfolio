@@ -2,8 +2,16 @@
 
     const myWorksContainer = document.querySelector('.my-works');
     const myWorksWrapper = myWorksContainer.querySelector('ul.wrapper');
-    const works = {
-        0: {
+    const works = [
+        {
+            name: 'RPG Online Game',
+            status: 'New',
+            dataHref: 'RPG',
+            backUrl: '',
+            frontUrl: '',
+            stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations', 'Node', 'Hapi', 'Websockets', 'Chat']
+        },
+        {
             name: 'Portfolio',
             status: 'New',
             dataHref: 'portfolio',
@@ -11,7 +19,7 @@
             frontUrl: '',
             stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
         },
-        1: {
+        {
             name: 'Pokedex',
             status: 'in process',
             dataHref: 'pokedex',
@@ -19,21 +27,21 @@
             frontUrl: './img/pokedex-desktop.png',
             stack: ['React', 'Redux', 'SSR', 'Scss', 'HookRouter', 'TS', 'Es-Lint']
         },
-        2: {
+        {
             name: 'Thanos Effect',
             dataHref: 'thanos-effect',
             backUrl: './img/thanos-back.jpeg',
             frontUrl: './img/thanos.jpg',
             stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
         },
-        3: {
+        {
             name: 'English learn',
             dataHref: 'english-learn',
             backUrl: '',
             frontUrl: '',
             stack: ['React', 'Redux', 'SCSS', 'Firebase']
         }
-    }
+    ];
 
     const template = ({name, status, dataHref, backUrl, frontUrl, stack}) => {
         let delay = 3;
@@ -64,8 +72,8 @@
         `;
     }
 
-    Object.values(works).forEach(work => {
+    works.forEach(work => {
         myWorksWrapper.insertAdjacentHTML( 'beforeend', template(work));
-    })
+    });
 
 })();
