@@ -1,19 +1,19 @@
 @font-face {
     font-family: 'RussoOneRegular';
-    src: url('../fonts/RussoOneRegular.eot');
-    src: url('../fonts/RussoOneRegular.eot') format('embedded-opentype'),
-    url('../fonts/RussoOneRegular.woff2') format('woff2'),
-    url('../fonts/RussoOneRegular.woff') format('woff'),
-    url('../fonts/RussoOneRegular.ttf') format('truetype');
+    src: url('../assets/fonts/RussoOneRegular.eot');
+    src: url('../assets/fonts/RussoOneRegular.eot') format('embedded-opentype'),
+    url('../assets/fonts/RussoOneRegular.woff2') format('woff2'),
+    url('../assets/fonts/RussoOneRegular.woff') format('woff'),
+    url('../assets/fonts/RussoOneRegular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto.eot');
-    src: url('../fonts/Roboto.eot') format('embedded-opentype'),
-    url('../fonts/Roboto.woff2') format('woff2'),
-    url('../fonts/Roboto.woff') format('woff'),
-    url('../fonts/Roboto.ttf') format('truetype');
+    src: url('../assets/fonts/Roboto.eot');
+    src: url('../assets/fonts/Roboto.eot') format('embedded-opentype'),
+    url('../assets/fonts/Roboto.woff2') format('woff2'),
+    url('../assets/fonts/Roboto.woff') format('woff'),
+    url('../assets/fonts/Roboto.ttf') format('truetype');
 }
 
 * {
