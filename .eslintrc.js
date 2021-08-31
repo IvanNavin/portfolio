@@ -19,5 +19,8 @@ module.exports = {
     "no-param-reassign": "off",
     "class-methods-use-this": "off",
     "no-unused-expressions": "off",
+    "no-self-assign": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
   },
 };

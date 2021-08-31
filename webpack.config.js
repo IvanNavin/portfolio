@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const { NODE_ENV } = process.env;
 
@@ -42,11 +43,30 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, "public", "cv"), to: "./cv" },
+        { from: path.resolve(__dirname, "public", "img"), to: "./img" },
+        { from: path.resolve(__dirname, "public", "video"), to: "./video" },
+      ],
     }),
   ],
   devServer: {

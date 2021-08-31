@@ -1,43 +1,47 @@
-(function () {
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
-        event.preventDefault();
+import { validator } from '../formManager';
 
-        const button = this.querySelector('button[type="submit"]');
+export default function sendForm() {
+  // eslint-disable-next-line consistent-return
+  function submitHandler(event) {
+    event.preventDefault();
 
-        const templateParams = {
-            from_name: this.name.value,
-            message: this.message.value
-        };
+    const button = this.querySelector('button[type="submit"]');
 
-        const successHandler = _ => {
-            button.classList.add('sent');
-        };
+    const templateParams = {
+      from_name: this.name.value,
+      message: this.message.value,
+    };
 
-        const errorHandler = error => {
-            button.classList.add('error');
-            console.error('FAILED...', error)
-        };
+    const successHandler = () => {
+      button.classList.add('sent');
+    };
 
-        const finallyHandler = _ => button.classList.remove('send', 'load');
+    const errorHandler = (error) => {
+      button.classList.add('error');
+      window.console.error('FAILED...', error);
+    };
 
-        if (!validator(this)) {
-            return false;
-        } else {
-            button.classList.add('send');
+    const finallyHandler = () => button.classList.remove('send', 'load');
 
-            setTimeout(_ => {
-                if (button.classList.contains('send')) {
-                    button.classList.add('load');
-                }
-            }, 1000);
+    if (!validator(this)) {
+      return false;
+    }
+    button.classList.add('send');
 
-            emailjs.send(
-                'service_p87kxia',
-                'template_s5whvsc',
-                templateParams,
-                'user_zvgv0ouqyrlxggmY5RXt7'
-            ).then(successHandler, errorHandler)
-                .finally(finallyHandler);
-        }
-    });
-})();
+    setTimeout(() => {
+      if (button.classList.contains('send')) {
+        button.classList.add('load');
+      }
+    }, 1000);
+
+    // eslint-disable-next-line no-undef
+    emailjs
+      .send('service_p87kxia', 'template_s5whvsc', templateParams, 'user_zvgv0ouqyrlxggmY5RXt7')
+      .then(successHandler, errorHandler)
+      .finally(finallyHandler);
+
+    return false;
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', submitHandler);
+}
