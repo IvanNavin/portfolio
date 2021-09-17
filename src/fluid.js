@@ -1,8 +1,9 @@
 import LDR from './img/LDR_LLL1_0.png';
+import { isMob } from './utils/isMob';
 
 export const Fluid = () => {
   // Simulation section
-  const i = 0;
+  // const i = 0;
 
   const canvas = document.getElementById('fluid');
   resizeCanvas();

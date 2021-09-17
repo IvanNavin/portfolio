@@ -9,4 +9,5 @@ node_modules
 *.css
 .*
 *.json
+*.min.js
 .prettierrc

@@ -27,7 +27,7 @@ export default class FormManager {
     }
   }
 
-  static init() {
+  init() {
     if (this.fields.length) {
       this.fields.forEach((fld) => {
         fld.addEventListener('focus', () => {
