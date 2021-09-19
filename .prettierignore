@@ -1,0 +1,13 @@
+dist
+coverage
+node_modules
+
+*.html
+**/*.js
+!src/**/*.js
+*.md
+*.css
+.*
+*.json
+*.min.js
+.prettierrc
