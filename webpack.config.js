@@ -11,13 +11,19 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  watch: NODE_ENV === 'development',
   watchOptions: {
     ignored: /node_modules/,
     poll: 1000,
   },
   module: {
     rules: [
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        options: {
+          pretty: NODE_ENV === 'development',
+        },
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -55,23 +61,25 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
+      },
     ],
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: path.resolve(__dirname, 'public/index.pug'),
     }),
     new CopyPlugin({
       patterns: [
         { from: path.resolve(__dirname, "public", "cv"), to: "./cv" },
         { from: path.resolve(__dirname, "public", "img"), to: "./img" },
-        { from: path.resolve(__dirname, "public", "video"), to: "./video" },
       ],
     }),
   ],
   devServer: {
     port: 3000,
-    // overlay: true,
     open: true,
     hot: true,
     historyApiFallback: true,

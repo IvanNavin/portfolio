@@ -1,3 +1,5 @@
+import dynamicImports from './dynamicImports';
+
 export class Router {
   routes = [];
 
@@ -64,6 +66,8 @@ export class Router {
   interval = () => {
     if (this.current === this.getFragment()) return;
     this.current = this.getFragment();
+
+    dynamicImports(this.current);
 
     this.routes.some((route) => {
       const match = this.current.match(route.path);

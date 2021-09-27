@@ -1,0 +1,55 @@
+-
+  var works = [
+      {
+          name: 'RPG Online Game',
+          status: 'New',
+          dataHref: 'RPG',
+          stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations', 'Node', 'Hapi', 'Websockets', 'Chat'],
+      },
+      {
+          name: 'Portfolio',
+          status: 'New',
+          dataHref: 'portfolio',
+          stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations'],
+      },
+      {
+          name: 'Pokedex',
+          status: 'in process',
+          dataHref: 'pokedex',
+          stack: ['React', 'Redux', 'SSR', 'Scss', 'HookRouter', 'TS', 'Es-Lint'],
+      },
+      {
+          name: 'Thanos Effect',
+          dataHref: 'thanos-effect',
+          stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations'],
+      },
+      {
+          name: 'English learn',
+          dataHref: 'english-learn',
+          stack: ['React', 'Redux', 'SCSS', 'Firebase'],
+      },
+  ];
+
+section.my-works(data-works='show-all')
+    .container
+        h2 Мои работы
+        p
+            | Так как в компаниях в которых я работал я подписал NDA(договор о неразглашении) мне придётся сюда выложить свои курсовые работы
+        br
+        ul.wrapper
+            each work in works
+              li.item
+                button.screen(data-href=work.dataHref)
+                  if work.status
+                    span.status= work.status
+                  .bar
+                    h5= work.name
+                    i
+                  .main
+                    .tags
+                      ul
+                        - var delay = 0.3;
+                        each stack in work.stack
+                          - delay = parseFloat((delay + 0.1).toFixed(1))
+                          li(style={'--delay': delay +'s'})= stack
+                    picture.img

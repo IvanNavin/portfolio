@@ -35,6 +35,8 @@
     "husky": "^7.0.0",
     "prettier": "^2.3.2",
     "prettier-quick": "0.0.5",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",

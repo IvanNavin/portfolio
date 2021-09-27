@@ -19,46 +19,12 @@ const socialLinks = () => {
 
 const navigation = () => {
   const navigationWrapper = document.querySelector('[data-nav-wrapper]');
-  const navMenu = document.querySelector('[data-nav-menu]');
   const router = new Router({ mode: 'hash', root: '/' });
   const path = router.getFragment() ? router.getFragment() : 'main-page';
-
-  const buttons = [
-    {
-      firstName: 'Привет!',
-      secondName: 'Обо мне',
-      dataHref: 'about',
-    },
-    {
-      firstName: 'Меня',
-      secondName: 'Мои работы',
-      dataHref: 'my-works',
-    },
-    {
-      firstName: 'зовут',
-      secondName: 'контакты',
-      dataHref: 'contacts',
-    },
-    {
-      firstName: 'Иван',
-      secondName: 'Доклады',
-      dataHref: 'performances',
-    },
-  ];
 
   if (navigationWrapper.dataset.navWrapper === '') {
     navigationWrapper.dataset.navWrapper = 'main-page';
   }
-
-  buttons.forEach((button) => {
-    const html = `
-            <button data-href="${button.dataHref}">
-                <span data-name-button="${button.firstName}" data-second-name-button="${button.secondName}"></span>
-            </button>
-        `;
-
-    navMenu.insertAdjacentHTML('beforeend', html);
-  });
 
   const links = document.querySelectorAll('[data-href]');
 

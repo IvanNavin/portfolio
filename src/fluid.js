@@ -1,42 +1,39 @@
 import LDR from './img/LDR_LLL1_0.png';
 import { isMob } from './utils/isMob';
 
-export const Fluid = () => {
-  // Simulation section
-  // const i = 0;
+const config = {
+  SIM_RESOLUTION: 128,
+  DYE_RESOLUTION: 1024,
+  CAPTURE_RESOLUTION: 512,
+  DENSITY_DISSIPATION: 1,
+  VELOCITY_DISSIPATION: 0.2,
+  PRESSURE: 0.8,
+  PRESSURE_ITERATIONS: 20,
+  CURL: 30,
+  SPLAT_RADIUS: 0.25,
+  SPLAT_FORCE: 6000,
+  SHADING: true,
+  COLORFUL: true,
+  COLOR_UPDATE_SPEED: 10,
+  PAUSED: false,
+  BACK_COLOR: { r: 0, g: 0, b: 0 },
+  TRANSPARENT: false,
+  BLOOM: true,
+  BLOOM_ITERATIONS: 8,
+  BLOOM_RESOLUTION: 256,
+  BLOOM_INTENSITY: 0.8,
+  BLOOM_THRESHOLD: 0.6,
+  BLOOM_SOFT_KNEE: 0.7,
+  SUNRAYS: true,
+  SUNRAYS_RESOLUTION: 196,
+  SUNRAYS_WEIGHT: 1.0,
+};
 
+const Fluid = () => {
   const canvas = document.getElementById('fluid');
   resizeCanvas();
 
-  const config = {
-    SIM_RESOLUTION: 128,
-    DYE_RESOLUTION: 1024,
-    CAPTURE_RESOLUTION: 512,
-    DENSITY_DISSIPATION: 1,
-    VELOCITY_DISSIPATION: 0.2,
-    PRESSURE: 0.8,
-    PRESSURE_ITERATIONS: 20,
-    CURL: 30,
-    SPLAT_RADIUS: 0.25,
-    SPLAT_FORCE: 6000,
-    SHADING: true,
-    COLORFUL: true,
-    COLOR_UPDATE_SPEED: 10,
-    PAUSED: false,
-    BACK_COLOR: { r: 0, g: 0, b: 0 },
-    TRANSPARENT: false,
-    BLOOM: true,
-    BLOOM_ITERATIONS: 8,
-    BLOOM_RESOLUTION: 256,
-    BLOOM_INTENSITY: 0.8,
-    BLOOM_THRESHOLD: 0.6,
-    BLOOM_SOFT_KNEE: 0.7,
-    SUNRAYS: true,
-    SUNRAYS_RESOLUTION: 196,
-    SUNRAYS_WEIGHT: 1.0,
-  };
-
-  function pointerPrototype() {
+  function PointerPrototype() {
     this.id = -1;
     this.texcoordX = 0;
     this.texcoordY = 0;
@@ -51,7 +48,7 @@ export const Fluid = () => {
 
   const pointers = [];
   const splatStack = [];
-  pointers.push(new pointerPrototype());
+  pointers.push(new PointerPrototype());
 
   const { gl, ext } = getWebGLContext(canvas);
 
@@ -252,7 +249,7 @@ export const Fluid = () => {
         vB = vUv - vec2(0.0, texelSize.y);
         gl_Position = vec4(aPosition, 0.0, 1.0);
     }
-`,
+    `,
   );
 
   const blurVertexShader = compileShader(
@@ -273,7 +270,7 @@ export const Fluid = () => {
         vR = vUv + texelSize * offset;
         gl_Position = vec4(aPosition, 0.0, 1.0);
     }
-`,
+    `,
   );
 
   const blurShader = compileShader(
@@ -293,7 +290,7 @@ export const Fluid = () => {
         sum += texture2D(uTexture, vR) * 0.35294117;
         gl_FragColor = sum;
     }
-`,
+    `,
   );
 
   const copyShader = compileShader(
@@ -308,7 +305,7 @@ export const Fluid = () => {
     void main () {
         gl_FragColor = texture2D(uTexture, vUv);
     }
-`,
+    `,
   );
 
   const clearShader = compileShader(
@@ -324,7 +321,7 @@ export const Fluid = () => {
     void main () {
         gl_FragColor = value * texture2D(uTexture, vUv);
     }
-`,
+    `,
   );
 
   const colorShader = compileShader(
@@ -337,7 +334,7 @@ export const Fluid = () => {
     void main () {
         gl_FragColor = color;
     }
-`,
+    `,
   );
 
   const checkerboardShader = compileShader(
@@ -358,7 +355,7 @@ export const Fluid = () => {
         v = v * 0.1 + 0.8;
         gl_FragColor = vec4(vec3(v), 1.0);
     }
-`,
+  `,
   );
 
   const displayShaderSource = `
@@ -445,7 +442,7 @@ export const Fluid = () => {
         c *= max(rq, br - threshold) / max(br, 0.0001);
         gl_FragColor = vec4(c, 0.0);
     }
-`,
+  `,
   );
 
   const bloomBlurShader = compileShader(
@@ -469,7 +466,7 @@ export const Fluid = () => {
         sum *= 0.25;
         gl_FragColor = sum;
     }
-`,
+  `,
   );
 
   const bloomFinalShader = compileShader(
@@ -494,7 +491,7 @@ export const Fluid = () => {
         sum *= 0.25;
         gl_FragColor = sum * intensity;
     }
-`,
+  `,
   );
 
   const sunraysMaskShader = compileShader(
@@ -512,7 +509,7 @@ export const Fluid = () => {
         c.a = 1.0 - min(max(br * 20.0, 0.0), 0.8);
         gl_FragColor = c;
     }
-`,
+  `,
   );
 
   const sunraysShader = compileShader(
@@ -550,7 +547,7 @@ export const Fluid = () => {
 
         gl_FragColor = vec4(color * Exposure, 0.0, 0.0, 1.0);
     }
-`,
+  `,
   );
 
   const splatShader = compileShader(
@@ -573,7 +570,7 @@ export const Fluid = () => {
         vec3 base = texture2D(uTarget, vUv).xyz;
         gl_FragColor = vec4(base + splat, 1.0);
     }
-`,
+  `,
   );
 
   const advectionShader = compileShader(
@@ -646,7 +643,7 @@ export const Fluid = () => {
         float div = 0.5 * (R - L + T - B);
         gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
     }
-`,
+  `,
   );
 
   const curlShader = compileShader(
@@ -670,7 +667,7 @@ export const Fluid = () => {
         float vorticity = R - L - T + B;
         gl_FragColor = vec4(0.5 * vorticity, 0.0, 0.0, 1.0);
     }
-`,
+  `,
   );
 
   const vorticityShader = compileShader(
@@ -706,7 +703,7 @@ export const Fluid = () => {
         velocity = min(max(velocity, -1000.0), 1000.0);
         gl_FragColor = vec4(velocity, 0.0, 1.0);
     }
-`,
+  `,
   );
 
   const pressureShader = compileShader(
@@ -733,7 +730,7 @@ export const Fluid = () => {
         float pressure = (L + R + B + T - divergence) * 0.25;
         gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
     }
-`,
+  `,
   );
 
   const gradientSubtractShader = compileShader(
@@ -759,7 +756,7 @@ export const Fluid = () => {
         velocity.xy -= vec2(R - L, T - B);
         gl_FragColor = vec4(velocity, 0.0, 1.0);
     }
-`,
+  `,
   );
 
   const blit = (() => {
@@ -960,7 +957,7 @@ export const Fluid = () => {
   }
 
   function resizeDoubleFBO(target, w, h, internalFormat, format, type, param) {
-    if (target.width == w && target.height == h) return target;
+    if (target.width === w && target.height === h) return target;
     target.read = resizeFBO(target.read, w, h, internalFormat, format, type, param);
     target.write = createFBO(w, h, internalFormat, format, type, param);
     target.width = w;
@@ -1018,13 +1015,18 @@ export const Fluid = () => {
   let colorUpdateTimer = 0.0;
   update();
 
-  function update() {
+  function interval() {
+    if (!canvas.offsetHeight) return false;
     const dt = calcDeltaTime();
     if (resizeCanvas()) initFramebuffers();
     updateColors(dt);
     applyInputs();
     if (!config.PAUSED) step(dt);
     render(null);
+  }
+
+  function update() {
+    interval();
     requestAnimationFrame(update);
   }
 
@@ -1299,7 +1301,7 @@ export const Fluid = () => {
     const posX = e.offsetX;
     const posY = e.offsetY;
     let pointer = pointers.find((p) => p.id == -1);
-    if (pointer == null) pointer = new pointerPrototype();
+    if (pointer == null) pointer = new PointerPrototype();
     updatePointerDownData(pointer, -1, posX, posY);
   });
 
@@ -1318,7 +1320,7 @@ export const Fluid = () => {
   canvas.addEventListener('touchstart', (e) => {
     e.preventDefault();
     const touches = e.targetTouches;
-    while (touches.length >= pointers.length) pointers.push(new pointerPrototype());
+    while (touches.length >= pointers.length) pointers.push(new PointerPrototype());
     for (let i = 0; i < touches.length; i++) {
       const posX = touches[i].pageX;
       const posY = touches[i].pageY;
@@ -1495,3 +1497,5 @@ export const Fluid = () => {
     return hash;
   }
 };
+
+export default Fluid;

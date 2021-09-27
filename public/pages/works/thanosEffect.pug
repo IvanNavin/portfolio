@@ -1,0 +1,23 @@
+section.work.thanos-effect
+    .container
+        h2#thanos Thanos Effect
+        p Работая в EvoPlay мне поступила задача: воспроизвести эфект Таноса.
+        p Что нужно сделать?
+        p
+            | Нужно сделать распад картинок, как в фильме Мстители 3: Война бесконечности. Картинки должны распадаться на пепел и разлетаться по ветру.
+        p Немного полапатив интернет, я обнаружил много примеров данной реализации.
+        p
+            | Все примеры которые я находил, были сделаны с библиотекой html2canvas, меня это немного не устраивало! Т.к. мне нужно разщиплять на атомы только картинки а не любой контент. А для этих целей подойдут и обычные средства canvas.
+        p Поэтому я сделал этот эффект без применения библиотеки html2canvas
+        a(href='https://destructurizator.netlify.app/' target='_blank')
+            svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500')
+                defs
+                    path#textcircle(d='M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250')
+                text(dy='70' textLength='1220')
+                    textpath(xlink:href='#textcircle') Результат смотрим тут
+        a(href='https://github.com/IvanNavin/destructurizator' target='_blank')
+            svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500')
+                defs
+                    path#textcircle(d='M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250')
+                text(dy='70' textLength='1220' style='letter-spacing: 38px')
+                    textpath(xlink:href='#textcircle') Код смотрим тут

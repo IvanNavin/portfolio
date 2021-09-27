@@ -1,0 +1,27 @@
+section.contacts
+    .wrapper
+        .social-links.animate
+            a.social-link.linkedin(href='https://www.linkedin.com/in/golovkoivan' title='link to linkedin profile')
+                svg
+                    use(xlink:href='#linkedin')
+            a.social-link.github(href='https://github.com/IvanNavin' title='link to github profile')
+                svg
+                    use(xlink:href='#github')
+            a.social-link.instagram(href='https://www.instagram.com/oivanholovko/' title='link to instagram profile')
+                svg
+                    use(xlink:href='#instagram')
+        h2 Сказать привет
+        form#contact-form
+            .form-block(data-form-block='')
+                input#name.fld(type='text' data-fld='')
+                label.lbl(for='name') Имя
+            .form-block(data-form-block='')
+                textarea#message.fld.textarea(rows='5' data-fld='')
+                label.lbl(for='message') Сообщение
+            button(type='submit')
+                span Отправить сообщение
+                span.loader(style='--delay:0.1s') .
+                span.loader(style='--delay:0.2s') .
+                span.loader(style='--delay:0.3s') .
+                span.success Сообщение отправлено
+                span.error Что-то пошло не так
