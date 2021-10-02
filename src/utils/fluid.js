@@ -1,5 +1,5 @@
-import LDR from './img/LDR_LLL1_0.png';
-import { isMob } from './utils/isMob';
+import LDR from '../assets/img/LDR_LLL1_0.png';
+import { isMob } from './isMob';
 
 const config = {
   SIM_RESOLUTION: 128,

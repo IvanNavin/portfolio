@@ -1,10 +1,10 @@
-import { putYouTubeAfterEl } from './utils/putYouTube';
-import PORTFOLIO from './img/portfolio.png';
-import POKEDEXHOME from './img/pokedex-home.png';
-import ENGLISH from './img/English.jpg';
-import THANOS from './img/thanos.jpg';
-import EFFECTTHANOS from './video/effectThanos.mp4';
-import GAMEJSPRO from './video/game_js_pro.mp4';
+import { putYouTubeAfterEl } from './putYouTube';
+import PORTFOLIO from '../assets/img/portfolio.png';
+import POKEDEXHOME from '../assets/img/pokedex-home.png';
+import ENGLISH from '../assets/img/English.jpg';
+import THANOS from '../assets/img/thanos.jpg';
+import EFFECTTHANOS from '../assets/video/effectThanos.mp4';
+import GAMEJSPRO from '../assets/video/game_js_pro.mp4';
 
 export const breadCrumbs = [
   {
@@ -103,18 +103,19 @@ const dynamicImports = (page) => {
   backBtnP.innerText = currentCrumb.parentName;
 
   if (!isBackBtnLoad && page !== 'main-page' && page !== '') {
-    import('./back-btn').then((result) => result && result.default('#back-btn'));
+    import('../components/backButton/back-btn').then((result) => result && result.default('#back-btn'));
     isBackBtnLoad = true;
   }
 
   if (!isInit) {
     if (page === 'main-page' || page === '') {
       import('./fluid').then((result) => result && result.default());
-      import('./mainPage').then((result) => result && result.default());
+      import('../pages/main/mainPage').then((result) => result && result.default());
     }
-    page === 'about' && import('./randomFacts').then((result) => result && result.default());
-    page === 'my-works' && import('./myWorks').then((result) => result && result.default());
-    page === 'contacts' && import('./FormManager').then(({ default: FormManager }) => FormManager && new FormManager());
+    page === 'about' && import('../pages/about/randomFacts').then((result) => result && result.default());
+    page === 'my-works' && import('../pages/myWorks/myWorks').then((result) => result && result.default());
+    page === 'contacts' &&
+      import('../pages/contacts/FormManager').then(({ default: FormManager }) => FormManager && new FormManager());
     page === 'accessibility' && putYouTubeAfterEl(accessibilityHeader, 'https://www.youtube.com/embed/c1W9u6SN2Cw');
     page === 'regexp' && putYouTubeAfterEl(regexpHeader, 'https://www.youtube.com/embed/ZJw-nqtDrWc');
     if (page === 'pokedex') {

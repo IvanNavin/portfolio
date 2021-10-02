@@ -69,12 +69,12 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.pug'),
+      template: path.resolve(__dirname, 'src/index.pug'),
     }),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, "public", "cv"), to: "./cv" },
-        { from: path.resolve(__dirname, "public", "img"), to: "./img" },
+        { from: path.resolve(__dirname, "src/assets", "cv"), to: "./cv" },
+        { from: path.resolve(__dirname, "src/assets/img", "favicons"), to: "./assets/img/favicons" },
       ],
     }),
   ],

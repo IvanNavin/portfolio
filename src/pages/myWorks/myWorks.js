@@ -1,8 +1,8 @@
-import PORTFOLIO from './img/portfolio.png';
-import POKEDEXHOME from './img/pokedex-home.png';
-import POKEDEXDESKTOP from './img/pokedex-desktop.png';
-import THANOSBACK from './img/thanos-back.jpeg';
-import THANOS from './img/thanos.jpg';
+import PORTFOLIO from '../../assets/img/portfolio.png';
+import POKEDEXHOME from '../../assets/img/pokedex-home.png';
+import POKEDEXDESKTOP from '../../assets/img/pokedex-desktop.png';
+import THANOSBACK from '../../assets/img/thanos-back.jpeg';
+import THANOS from '../../assets/img/thanos.jpg';
 
 const myWorks = () => {
   const works = [

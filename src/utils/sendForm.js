@@ -1,4 +1,4 @@
-import { validator } from '../formManager';
+import { validator } from '../pages/contacts/FormManager';
 
 export default function sendForm() {
   // eslint-disable-next-line consistent-return

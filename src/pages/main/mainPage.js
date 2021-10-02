@@ -1,5 +1,5 @@
-import IAM from './img/iam-wb-1.png';
-import { mobOrDescHandler } from './utils/mobOrDescHandler';
+import IAM from '../../assets/img/iam-wb-1.png';
+import { mobOrDescHandler } from '../../utils/mobOrDescHandler';
 
 export default () => {
   const fluid = document.querySelector('#fluid');
