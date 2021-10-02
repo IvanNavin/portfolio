@@ -6,6 +6,11 @@ const { NODE_ENV } = process.env;
 
 module.exports = {
   mode: NODE_ENV || 'development',
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     filename: 'main.js',
