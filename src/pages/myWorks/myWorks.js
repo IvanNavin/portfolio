@@ -3,13 +3,16 @@ import POKEDEXHOME from '../../assets/img/pokedex-home.png';
 import POKEDEXDESKTOP from '../../assets/img/pokedex-desktop.png';
 import THANOSBACK from '../../assets/img/thanos-back.jpeg';
 import THANOS from '../../assets/img/thanos.jpg';
+import ENGLISH from '../../assets/img/English.jpg';
+import RPG from '../../assets/img/RPG.png';
+import RPGGAME from '../../assets/img/RPG-GAME.png';
 
 const myWorks = () => {
   const works = [
     {
       dataHref: 'RPG',
-      backUrl: '',
-      frontUrl: '',
+      backUrl: RPG,
+      frontUrl: RPGGAME,
     },
     {
       dataHref: 'portfolio',
@@ -28,7 +31,7 @@ const myWorks = () => {
     },
     {
       dataHref: 'english-learn',
-      backUrl: '',
+      backUrl: ENGLISH,
       frontUrl: '',
     },
   ];

@@ -1,3 +1,25 @@
+-
+    var skills = [
+        "HTML",
+        "Twig",
+        "Pug",
+        "Less",
+        "Sass",
+        "JQuery",
+        "JS / ES6 +",
+        "React",
+        "Redux",
+        "Thunk",
+        "TypeScript",
+        "Jest",
+        "GraphQL",
+        "AMPS",
+        "Gulp",
+        "Webpack",
+        "EsLint",
+        "Prettier",
+      ];
+
 section.about
     .container
         h2 Всем привет!
@@ -7,33 +29,16 @@ section.about
             | Сейчас я занимаюсь разработкой Front-end приложений, вёрсткой и обслуживанием сайтов.
         p
             | Мне нравится превращать сложные задачи в простые, красивые и интуитивно понятные конструкции.
-        p Когда я не пишу код, я играю на гитаре, жарю мясо или уделяю время семье.
-        p C 2018 года работаю в компании "EvoPlay".
+        p Когда я не пишу код, я играю на ps5, жарю мясо или уделяю время семье.
+        p C 2018 по 2021 год я работал в компании "EvoPlay".
+        p После этого я устроился в компанию "Luxoft".
         p Мне нравятся интересные задачи и находить интересные решения для них
         p В компании я стараюсь проявлять свои софт-скилы
         p Провожу доклады и стараюсь быть нужным.
-        p Сейчас я работаю с двумя стэками в Кор-проектах мы используем:
+        p Имею опыт работы с:
         ul.skills
-            li HTML
-            li Twig
-            li Less
-            li JQuery
-            li JS/ES6+
-            li GraphQL
-            li Gulp
-            li Webpack
-        p В других проектах мы используем React:
-        ul.skills
-            li React
-            li Redux
-            li Saga
-            li TypeScript
-            li EsLint
-            li SSR
-            li Node.js
-            li Express
-            li Jest
-            li Webpack
+            each skill in skills
+              li= skill
         p Паралельно изучаю новые технологии и стараюсь ими делится с другими.
         h2.facts-header Случайные факты:
         ul.facts(data-facts='')

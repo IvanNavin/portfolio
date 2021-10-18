@@ -1358,11 +1358,9 @@ const Fluid = () => {
     if (e.key === ' ') splatStack.push(parseInt(Math.random() * 20) + 5);
   });
 
-  if (isMob()) {
-    setInterval((e) => {
-      splatStack.push(parseInt(Math.random() * 20) + 5);
-    }, 10000);
-  }
+  setInterval(() => {
+    splatStack.push(parseInt(Math.random() * 20) + 5);
+  }, 10000);
 
   function updatePointerDownData(pointer, id, posX, posY) {
     pointer.id = id;
