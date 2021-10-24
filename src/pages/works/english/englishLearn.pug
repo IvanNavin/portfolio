@@ -1,3 +1,5 @@
+include ../btn
+
 section.work.english-learn
     .container
         h2#english English learn
@@ -12,15 +14,5 @@ section.work.english-learn
         p Пароль: 12345678
         br
         // <p>На данный момент, я обратил внимание, что слова юзера появляются после перезагрузки страницы</p>
-        a(href='https://learn-english-card.netlify.app/' target='_blank')
-            svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500')
-                defs
-                    path#textcircle(d='M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250')
-                text(dy='70' textLength='1220')
-                    textpath(xlink:href='#textcircle') Результат смотрим тут
-        a(href='https://github.com/IvanNavin/EnglishLearn/' target='_blank')
-            svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500')
-                defs
-                    path#textcircle(d='M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250')
-                text(dy='70' textLength='1220' style='letter-spacing: 38px')
-                    textpath(xlink:href='#textcircle') Код смотрим тут
+        +btn('Результат смотрим тут', 'https://learn-english-card.netlify.app/')
+        +btn('Код смотрим тут', 'https://github.com/IvanNavin/EnglishLearn/', 'letter-spacing: 38px')

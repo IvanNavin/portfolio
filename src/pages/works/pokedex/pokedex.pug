@@ -1,3 +1,5 @@
+include ../btn
+
 section.work.pokedex
     .container
         h2#pokedex Pokedex
@@ -37,9 +39,5 @@ section.work.pokedex
             | сделал модальные окна через "createPortal".
         p В будующем я планирую добавить в проект бесконечную подгрузку и storyBook
         br
-        a(href='' target='_blank')
-            svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500')
-                defs
-                    path#textcircle(d='M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250')
-                text(dy='70' textLength='1220' style='letter-spacing: 38px')
-                    textpath(xlink:href='#textcircle') Код смотрим тут
+        +btn('Результат смотрим тут', 'https://pokedex777.vercel.app/')
+        +btn('Код смотрим тут', 'https://github.com/IvanNavin/Pokedex777', 'letter-spacing: 38px')
