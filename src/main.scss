@@ -196,10 +196,6 @@ a {
   }
 }
 
-.mobile-platform .main-page #fluid {
-  pointer-events: none;
-}
-
 .main-page img {
   display: block;
   width: 50%;
@@ -481,7 +477,7 @@ body.mobile-platform .nav-menu {
 
     &::after {
       z-index: 0;
-      background-image: url('../assets/img/monk.png') !important;
+      background-image: url('assets/img/monk.png') !important;
       background-color: #333;
       background-blend-mode: initial;
       background-size: auto 75px;
@@ -656,7 +652,7 @@ body.mobile-platform .nav-menu {
     display: inline-block;
     width: 100px;
     height: 100px;
-    background: url('../assets/img/monk.png') center no-repeat;
+    background: url('assets/img/monk.png') center no-repeat;
     background-size: 30px;
     margin: 20px;
   }
@@ -702,7 +698,7 @@ body.mobile-platform .nav-menu {
       margin-top: -191px;
       width: 543px;
       height: 382px;
-      background-image: url('../assets/img/light_dots.png');
+      background-image: url('assets/img/light_dots.png');
       background-size: 100%;
       filter: brightness(200%);
       pointer-events: none;
@@ -826,7 +822,7 @@ body.mobile-platform .nav-menu {
     content: '';
     width: 20px;
     height: 20px;
-    background: url('../assets/img/send.svg') (center / cover) no-repeat;
+    background: url('assets/img/send.svg') (center / cover) no-repeat;
     position: absolute;
     top: 12px;
     right: 15px;
@@ -1110,17 +1106,15 @@ body.mobile-platform .nav-menu {
 
 @font-face {
   font-family: 'RussoOneRegular';
-  src: url('../assets/fonts/RussoOneRegular.eot');
-  src: url('../assets/fonts/RussoOneRegular.eot') format('embedded-opentype'),
-    url('../assets/fonts/RussoOneRegular.woff2') format('woff2'),
-    url('../assets/fonts/RussoOneRegular.woff') format('woff'),
-    url('../assets/fonts/RussoOneRegular.ttf') format('truetype');
+  src: url('assets/fonts/RussoOneRegular.eot');
+  src: url('assets/fonts/RussoOneRegular.eot') format('embedded-opentype'),
+    url('assets/fonts/RussoOneRegular.woff2') format('woff2'), url('assets/fonts/RussoOneRegular.woff') format('woff'),
+    url('assets/fonts/RussoOneRegular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/fonts/Roboto.eot');
-  src: url('../assets/fonts/Roboto.eot') format('embedded-opentype'),
-    url('../assets/fonts/Roboto.woff2') format('woff2'), url('../assets/fonts/Roboto.woff') format('woff'),
-    url('../assets/fonts/Roboto.ttf') format('truetype');
+  src: url('assets/fonts/Roboto.eot');
+  src: url('assets/fonts/Roboto.eot') format('embedded-opentype'), url('assets/fonts/Roboto.woff2') format('woff2'),
+    url('assets/fonts/Roboto.woff') format('woff'), url('assets/fonts/Roboto.ttf') format('truetype');
 }

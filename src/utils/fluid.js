@@ -1326,6 +1326,7 @@ const Fluid = () => {
       const posY = touches[i].pageY;
       updatePointerDownData(pointers[i + 1], touches[i].identifier, posX, posY);
     }
+    isMob() && document.querySelector('.main-page').classList.toggle('tapped');
   });
 
   canvas.addEventListener(

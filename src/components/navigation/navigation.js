@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/named
-import { Router } from './router';
+import { Router } from '../../utils/router';
 
 const updateIframes = () => document.querySelectorAll('iframe').forEach((iframe) => (iframe.src = iframe.src));
 

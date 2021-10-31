@@ -1,7 +1,7 @@
-import './styles/main.scss';
-import './styles/preloader.scss';
-import './styles/download.scss';
-import navigation from './utils/navigation';
+import './main.scss';
+import './components/preloader/preloader.scss';
+import './pages/about/download.scss';
+import navigation from './components/navigation/navigation';
 
 document.addEventListener('DOMContentLoaded', () => {
   navigation();

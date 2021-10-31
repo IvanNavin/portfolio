@@ -108,39 +108,66 @@ const dynamicImports = (page) => {
   }
 
   if (!isInit) {
-    if (page === 'main-page' || page === '') {
-      import('./fluid').then((result) => result && result.default());
-      import('../pages/main/mainPage').then((result) => result && result.default());
-    }
-    page === 'about' && import('../pages/about/randomFacts').then((result) => result && result.default());
-    page === 'my-works' && import('../pages/myWorks/myWorks').then((result) => result && result.default());
-    page === 'contacts' &&
-      import('../pages/contacts/FormManager').then(({ default: FormManager }) => FormManager && new FormManager());
-    page === 'accessibility' && putYouTubeAfterEl(accessibilityHeader, 'https://www.youtube.com/embed/c1W9u6SN2Cw');
-    page === 'regexp' && putYouTubeAfterEl(regexpHeader, 'https://www.youtube.com/embed/ZJw-nqtDrWc');
-    if (page === 'pokedex') {
-      pokedexHeader.insertAdjacentHTML('afterend', `<img src="${POKEDEXHOME}" alt="Pokedex site img"/>`);
-      putYouTubeAfterEl(examplePokedex, 'https://www.youtube.com/embed/3QXCrih6_MI');
-    }
-    page === 'portfolio' &&
-      portfolioHeader.insertAdjacentHTML('afterend', `<img src="${PORTFOLIO}" alt="Portfolio site img"/>`);
-    page === 'english-learn' &&
-      englishHeader.insertAdjacentHTML('afterend', `<img src="${ENGLISH}" alt="English site img"/>`);
-    if (page === 'thanos-effect') {
-      thanosHeader.insertAdjacentHTML(
-        'afterend',
-        `<video loop='' autoplay='' muted='' poster='${THANOS}'>
-         <source src="${EFFECTTHANOS}" />
-       </video>`,
-      );
-    }
-    if (page === 'RPG') {
-      rpgHeader.insertAdjacentHTML(
-        'afterend',
-        `<video loop='' autoplay='' muted='' poster=''>
-         <source src="${GAMEJSPRO}" />
-       </video>`,
-      );
+    switch (page) {
+      case '':
+      case 'main-page': {
+        import('./fluid').then((result) => result && result.default());
+        import('../pages/main/mainPage').then((result) => result && result.default());
+        break;
+      }
+      case 'about': {
+        import('../pages/about/randomFacts').then((result) => result && result.default());
+        break;
+      }
+      case 'my-works': {
+        import('../pages/myWorks/myWorks').then((result) => result && result.default());
+        break;
+      }
+      case 'contacts': {
+        import('../pages/contacts/FormManager').then(({ default: FormManager }) => FormManager && new FormManager());
+        break;
+      }
+      case 'accessibility': {
+        putYouTubeAfterEl(accessibilityHeader, 'https://www.youtube.com/embed/c1W9u6SN2Cw');
+        break;
+      }
+      case 'regexp': {
+        putYouTubeAfterEl(regexpHeader, 'https://www.youtube.com/embed/ZJw-nqtDrWc');
+        break;
+      }
+      case 'pokedex': {
+        pokedexHeader.insertAdjacentHTML('afterend', `<img src="${POKEDEXHOME}" alt="Pokedex site img"/>`);
+        putYouTubeAfterEl(examplePokedex, 'https://www.youtube.com/embed/3QXCrih6_MI');
+        break;
+      }
+      case 'portfolio': {
+        portfolioHeader.insertAdjacentHTML('afterend', `<img src="${PORTFOLIO}" alt="Portfolio site img"/>`);
+        break;
+      }
+      case 'english-learn': {
+        englishHeader.insertAdjacentHTML('afterend', `<img src="${ENGLISH}" alt="English site img"/>`);
+        break;
+      }
+      case 'thanos-effect': {
+        thanosHeader.insertAdjacentHTML(
+          'afterend',
+          `<video loop='' autoplay='' muted='' poster='${THANOS}'>
+                  <source src="${EFFECTTHANOS}" />
+                </video>`,
+        );
+        break;
+      }
+      case 'RPG': {
+        rpgHeader.insertAdjacentHTML(
+          'afterend',
+          `<video loop='' autoplay='' muted='' poster=''>
+                    <source src="${GAMEJSPRO}" />
+                </video>`,
+        );
+        break;
+      }
+      default:
+        break;
     }
 
     breadCrumbs[pathIndex].isInit = true;
