@@ -2,34 +2,3 @@ section.report.accessibility
     h2#accessibility Разработка доступных интерфейсов
     h2 Ссылка на доклад
     a(href='https://developing-accessible-interfaces.netlify.app/' target='_blank') https://developing-accessible-interfaces.netlify.app/
-    p.
-      function getWithPath(obj, path) {
-      // some edge cases
-      if (obj === null || obj === undefined) return obj;
-      // empty path, need to return the value
-      if (path === '') return obj;
-      const [current, ...steps] = path.split('.');
-
-      if (current.includes('[')) {
-        // it feels like property is an array
-        const openBracketPos = current.indexOf('[');
-        const closeBracketPos = current.indexOf(']');
-        // is it one-dimensional array?
-        const key = current.substring(0, openBracketPos);
-        // need to check for correctness, e.g. key is a valid key, indexes bounds
-        // not implemented through 
-        const idx = parseInt(current.substring(openBracketPos + 1, closeBracketPos));
-        // here should be NaN check
-        if (key) {
-        // take a value from current key and call itself with next steps
-        return getWithPath(obj[key][idx], current.substring(closeBracketPos + 1) + steps.join('.'));
-      } else {
-        // thats an multidimensional array, lets unwind it
-        return getWithPath(obj[idx], current.substring(closeBracketPos + 1) + steps.join('.'));
-      }
-      } else {
-      // this is a regular property
-      // take a value from current key and call itself with next steps
-      return getWithPath(obj[current], steps.join('.'));
-      }
-      }
