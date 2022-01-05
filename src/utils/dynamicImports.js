@@ -5,85 +5,11 @@ import ENGLISH from '../assets/img/English.jpg';
 import THANOS from '../assets/img/thanos.jpg';
 import EFFECTTHANOS from '../assets/video/effectThanos.mp4';
 import GAMEJSPRO from '../assets/video/game_js_pro.mp4';
-
-export const breadCrumbs = [
-  {
-    page: 'main-page',
-    isInit: false,
-    parentPage: 'main-page',
-    parentName: 'Иван',
-  },
-  {
-    page: 'about',
-    isInit: false,
-    parentPage: 'main-page',
-    parentName: 'Иван',
-  },
-  {
-    page: 'my-works',
-    isInit: false,
-    parentPage: 'main-page',
-    parentName: 'Иван',
-  },
-  {
-    page: 'pokedex',
-    isInit: false,
-    parentPage: 'my-works',
-    parentName: 'Мои работы',
-  },
-  {
-    page: 'contacts',
-    isInit: false,
-    parentPage: 'main-page',
-    parentName: 'Иван',
-  },
-  {
-    page: 'portfolio',
-    isInit: false,
-    parentPage: 'my-works',
-    parentName: 'Мои работы',
-  },
-  {
-    page: 'RPG',
-    isInit: false,
-    parentPage: 'my-works',
-    parentName: 'Мои работы',
-  },
-  {
-    page: 'thanos-effect',
-    isInit: false,
-    parentPage: 'my-works',
-    parentName: 'Мои работы',
-  },
-  {
-    page: 'english-learn',
-    isInit: false,
-    parentPage: 'my-works',
-    parentName: 'Мои работы',
-  },
-  {
-    page: 'performances',
-    isInit: false,
-    parentPage: 'main-page',
-    parentName: 'Иван',
-  },
-  {
-    page: 'regexp',
-    isInit: false,
-    parentPage: 'performances',
-    parentName: 'Доклады',
-  },
-  {
-    page: 'accessibility',
-    isInit: false,
-    parentPage: 'performances',
-    parentName: 'Доклады',
-  },
-];
+import { breadCrumbs } from './breadCrumbs';
 
 let isBackBtnLoad = false;
 
-const dynamicImports = (page) => {
+const dynamicImports = (page, locale) => {
   page === '' && (page = 'main-page');
   const accessibilityHeader = document.getElementById('accessibility');
   const regexpHeader = document.getElementById('regexp');
@@ -95,16 +21,80 @@ const dynamicImports = (page) => {
   const rpgHeader = document.getElementById('rpg');
   const backBtn = document.querySelector('.back-button');
   const backBtnP = document.querySelector('.back-button p');
-  const currentCrumb = breadCrumbs.find((crumb) => crumb.page === page);
+  let currentCrumbIndex = 0;
+  const currentCrumb = breadCrumbs.find((crumb, index) => {
+    currentCrumbIndex = index;
+    return crumb.page === page;
+  });
   const pathIndex = breadCrumbs.findIndex((crumb) => crumb.page === page);
-  const { isInit } = currentCrumb;
+  const { isInit, language } = currentCrumb;
+  const langChanged = locale !== language;
+  const { local = 'ru' } = window;
 
   backBtn.dataset.href = currentCrumb.parentPage;
-  backBtnP.innerText = currentCrumb.parentName;
+  backBtnP.innerHTML = currentCrumb.parentName[local];
 
   if (!isBackBtnLoad && page !== 'main-page' && page !== '') {
     import('../components/backButton/back-btn').then((result) => result && result.default('#back-btn'));
     isBackBtnLoad = true;
+  }
+
+  if (!isInit || langChanged) {
+    switch (page) {
+      case '':
+      case 'main-page': {
+        import('../pages/main/mainText').then((result) => result && result.default());
+        break;
+      }
+      case 'about': {
+        import('../pages/about/aboutText').then((result) => result && result.default());
+        break;
+      }
+      case 'my-works': {
+        import('../pages/myWorks/myWokrsText').then((result) => result && result.default());
+        break;
+      }
+      case 'contacts': {
+        import('../pages/contacts/contactsText').then((result) => result && result.default());
+        break;
+      }
+      case 'performances': {
+        import('../pages/performances/performancesText').then((result) => result && result.default());
+        break;
+      }
+      case 'accessibility': {
+        import('../pages/reports/accessibility/accessibilityText').then((result) => result && result.default());
+        break;
+      }
+      case 'regexp': {
+        import('../pages/reports/regexp/regexpText').then((result) => result && result.default());
+        break;
+      }
+      case 'pokedex': {
+        import('../pages/works/pokedex/pokedexText').then((result) => result && result.default());
+        break;
+      }
+      case 'portfolio': {
+        import('../pages/works/portfolio/portfolioText').then((result) => result && result.default());
+        break;
+      }
+      case 'english-learn': {
+        import('../pages/works/english/englishLearnText').then((result) => result && result.default());
+        break;
+      }
+      case 'thanos-effect': {
+        import('../pages/works/thanos/thanosEffectText').then((result) => result && result.default());
+        break;
+      }
+      case 'RPG': {
+        import('../pages/works/RPG/RPGText').then((result) => result && result.default());
+        break;
+      }
+      default:
+        break;
+    }
+    breadCrumbs[currentCrumbIndex].language = locale;
+    document.querySelector('html').setAttribute('lang', locale);
   }
 
   if (!isInit) {
@@ -116,7 +106,6 @@ const dynamicImports = (page) => {
         break;
       }
       case 'about': {
-        import('../pages/about/randomFacts').then((result) => result && result.default());
         break;
       }
       case 'my-works': {

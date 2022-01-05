@@ -19,15 +19,25 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
-        options: {
-          pretty: NODE_ENV === 'development',
-        },
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'pug-html-loader',
+            options: {
+              pretty: NODE_ENV === 'development',
+              data: {
+                foo: 'bar'
+              }
+            }
+          }
+        ],
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: [/node_modules/],
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,

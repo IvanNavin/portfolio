@@ -1,17 +1,17 @@
 import dynamicImports from './dynamicImports';
+import { langButton } from '../components/langButton/langButton';
 
 export class Router {
   routes = [];
 
-  mode = null;
-
-  root = '/';
-
   constructor(options) {
+    this.navigationWrapper = document.querySelector('[data-nav-wrapper]');
     this.mode = window.history.pushState ? 'history' : 'hash';
     if (options.mode) this.mode = options.mode;
-    if (options.root) this.root = options.root;
-    this.listen();
+    this.defaultLocale = 'ru';
+    this.locale = this.defaultLocale;
+    this.root = `/`;
+    this.navigate();
   }
 
   add = (path, cb) => {
@@ -34,19 +34,36 @@ export class Router {
     return this;
   };
 
+  socialLinks = (path) => {
+    if (path === 'contacts') {
+      const socialWrapper = document.querySelector('.social-links');
+      if (socialWrapper.classList.contains('animate')) {
+        socialWrapper.classList.remove('animate');
+      }
+      setTimeout(() => {
+        socialWrapper.classList.add('animate');
+      }, 1000);
+    }
+  };
+
+  setLocale = (locale) => {
+    window.local = locale;
+  };
+
+  getLocale = () => window.local || this.defaultLocale;
+
   clearSlashes = (path) => path.toString().replace(/\/$/, '').replace(/^\//, '');
 
   getFragment = () => {
-    let fragment = '';
     if (this.mode === 'history') {
-      fragment = this.clearSlashes(decodeURI(window.location.pathname + window.location.search));
-      fragment = fragment.replace(/\?(.*)$/, '');
-      fragment = this.root !== '/' ? fragment.replace(this.root, '') : fragment;
+      // fragment = this.clearSlashes(decodeURI(window.location.pathname + window.location.search));
+      // fragment = fragment.replace(/\?(.*)$/, '');
+      // fragment = this.root !== '/' ? fragment.replace(this.root, '') : fragment;
+      return this.clearSlashes(window.location.pathname);
     } else {
       const match = window.location.href.match(/#(.*)$/);
-      fragment = match ? match[1] : '';
+      return this.clearSlashes(match ? match[1] : '');
     }
-    return this.clearSlashes(fragment);
   };
 
   navigate = (path = '') => {
@@ -58,25 +75,72 @@ export class Router {
     return this;
   };
 
+  updateLinks = () => {
+    const links = document.querySelectorAll('[data-href]');
+
+    const linkHandler = (e) => {
+      e.preventDefault();
+      const fadeInElement = document.querySelector('.fadein');
+      const fadeOutElement = document.querySelector('.fadeout');
+      const prevLinkName = this.navigationWrapper.dataset.navWrapper;
+      const linkName = e.currentTarget.dataset.href;
+      const prevSection = document.querySelector(`.${prevLinkName}`);
+      const nextSection = document.querySelector(`.${linkName}`);
+
+      fadeInElement && fadeInElement.classList.remove('fadein');
+      fadeOutElement && fadeOutElement.classList.remove('fadeout');
+      prevSection.classList.add('fadeout');
+
+      setTimeout(() => {
+        this.navigationWrapper.dataset.navWrapper = linkName;
+        this.navigate(linkName);
+        nextSection.classList.add('fadein');
+      }, 400);
+    };
+
+    links.forEach((link) => link.addEventListener('click', linkHandler));
+  };
+
+  fadeNavigate = () => {
+    const route = this.getFragment() || 'main-page';
+    const fadeInElement = document.querySelector('.fadein');
+    const fadeOutElement = document.querySelector('.fadeout');
+
+    if (route !== this.navigationWrapper.dataset.navWrapper) {
+      this.navigationWrapper.dataset.navWrapper = route;
+      fadeInElement && fadeInElement.classList.remove('fadein');
+      fadeOutElement && fadeOutElement.classList.remove('fadeout');
+    }
+  };
+
   listen = () => {
     clearInterval(this.interval);
     this.interval = setInterval(this.interval, 50);
   };
 
   interval = () => {
-    if (this.current === this.getFragment()) return;
-    this.current = this.getFragment();
+    if (this.current !== this.getFragment() || this.locale !== this.getLocale()) {
+      this.locale = this.getLocale();
+      this.current = this.getFragment();
+      langButton(this.setLocale);
 
-    dynamicImports(this.current);
+      this.fadeNavigate();
+      dynamicImports(this.current, this.getLocale());
+      this.socialLinks(this.current);
+      setTimeout(() => {
+        this.updateLinks();
+      }, 1000);
 
-    this.routes.some((route) => {
-      const match = this.current.match(route.path);
-      if (match) {
-        match.shift();
-        route.cb.apply({}, match);
-        return match;
-      }
-      return false;
-    });
+      document.querySelectorAll('iframe').forEach((iframe) => (iframe.src = iframe.src));
+      this.routes.some((route) => {
+        const match = this.current.match(route.path);
+        if (match) {
+          match.shift();
+          route.cb.apply({}, match);
+          return match;
+        }
+        return false;
+      });
+    }
   };
 }

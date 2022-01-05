@@ -12,7 +12,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'max-len': ['error', { code: 120, comments: 140 }],
+    'max-len': "off",
     'no-bitwise': "off",
     "no-return-assign": "off",
     "no-plusplus": "off",
@@ -22,5 +22,9 @@ module.exports = {
     "no-self-assign": "off",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
+    "import/named": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "no-useless-escape": "off",
   },
 };

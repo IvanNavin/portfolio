@@ -2,7 +2,8 @@ import IAM from '../../assets/img/iam-wb-1.png';
 import { mobOrDescHandler } from '../../utils/mobOrDescHandler';
 
 export default () => {
-  const fluid = document.querySelector('#fluid');
+  const wrapper = document.querySelector('.main-page');
+  const fluid = wrapper.querySelector('#fluid');
 
   fluid.insertAdjacentHTML(
     'afterend',
@@ -13,5 +14,6 @@ export default () => {
     </map>
   `,
   );
+
   mobOrDescHandler();
 };

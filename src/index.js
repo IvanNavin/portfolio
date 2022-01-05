@@ -1,8 +1,10 @@
+import { Router } from './utils/router';
 import './main.scss';
 import './components/preloader/preloader.scss';
 import './pages/about/download.scss';
-import navigation from './components/navigation/navigation';
 
 document.addEventListener('DOMContentLoaded', () => {
-  navigation();
+  const router = new Router({ mode: 'history' });
+
+  router.listen();
 });

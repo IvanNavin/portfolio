@@ -1,33 +1,6 @@
--
-    var buttons = [
-        {
-            firstName: 'Привет!',
-            secondName: 'Обо мне',
-            dataHref: 'about',
-        },
-        {
-            firstName: 'Меня',
-            secondName: 'Мои работы',
-            dataHref: 'my-works',
-        },
-        {
-            firstName: 'зовут',
-            secondName: 'контакты',
-            dataHref: 'contacts',
-        },
-        {
-            firstName: 'Иван',
-            secondName: 'Доклады',
-            dataHref: 'performances',
-        },
-    ];
-
 section.main-page
     canvas#fluid
     h1.nav-menu(data-nav-menu='')
-      each button in buttons
-          button(data-href=button.dataHref style="background: transparent; outline: transparent; border-color: transparent;")
-              span(data-name-button=button.firstName data-second-name-button=button.secondName)
     span.tap-indication  anywhere
-    p.help Press &quot;P&quot; for Pause. Press &quot;Space&quot; for new effect
+    p.help
 

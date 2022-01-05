@@ -16,6 +16,7 @@ html {
 body {
   background-color: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* Change the white to any color ;) */
@@ -285,6 +286,7 @@ body.mobile-platform .nav-menu {
 
   &:first-child {
     color: #fff;
+    text-shadow: 1px 1px black;
   }
 
   &:not(:first-child) {
@@ -769,7 +771,6 @@ body.mobile-platform .nav-menu {
 
 .textarea {
   width: 100%;
-  height: 48px;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
   outline: transparent;
@@ -982,6 +983,72 @@ body.mobile-platform .nav-menu {
 
 .work video {
   width: 100%;
+}
+
+#lang {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  background: transparent;
+  border: none;
+  width: 50px;
+  padding: 10px 0 10px 0;
+  position: fixed;
+  top: 250px;
+  right: -33px;
+  color: #fff;
+  box-shadow: 0 0 1.5em #ffeacc, 0 1.25em 1.5em rgba(0, 0, 0, 0.2);
+  border-radius: 8px 0 0 8px;
+  transition: all linear 0.3s;
+  z-index: 9999;
+
+  &:hover {
+    right: 0;
+  }
+
+  .text {
+    position: absolute;
+    left: 3px;
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+    text-shadow: 1px 1px black;
+  }
+
+  .lang {
+    width: 20px;
+    height: 15px;
+    margin: 5px;
+    cursor: pointer;
+
+    &.ru {
+      background: url('./assets/svg/ru.svg');
+    }
+    &.ua {
+      background: url('./assets/svg/ua.svg');
+    }
+    &.en {
+      background: url('./assets/svg/en.svg');
+    }
+  }
+
+  &[data-lang='ru'] {
+    .lang.ru {
+      cursor: not-allowed;
+    }
+  }
+
+  &[data-lang='ua'] {
+    .lang.ua {
+      cursor: not-allowed;
+    }
+  }
+
+  &[data-lang='en'] {
+    .lang.en {
+      cursor: not-allowed;
+    }
+  }
 }
 
 .report video::-webkit-media-controls {
