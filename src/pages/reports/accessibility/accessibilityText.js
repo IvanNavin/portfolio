@@ -14,11 +14,10 @@ const accesssibilityText = { ru, ua, en };
 
 export default () => {
   const wrapper = document.querySelector('.accessibility');
-  const header = wrapper.getElementById('accessibility');
-  const linkTo = wrapper.querySelector('h2')[1];
+  const headers = wrapper.querySelectorAll('h2');
   const { local = 'ru' } = window;
   const { title, linkName } = accesssibilityText[local];
 
-  header.innerText = title;
-  linkTo.innerText = linkName;
+  headers[0].innerText = title;
+  headers[1].innerText = linkName;
 };

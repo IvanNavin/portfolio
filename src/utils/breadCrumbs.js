@@ -118,7 +118,7 @@ export const breadCrumbs = [
     parentName: {
       ru: 'Доклады',
       ua: 'Доповіді',
-      en: 'performances',
+      en: 'My reports',
     },
     language: defaultLanguage,
   },
@@ -129,7 +129,7 @@ export const breadCrumbs = [
     parentName: {
       ru: 'Доклады',
       ua: 'Доповіді',
-      en: 'performances',
+      en: 'My reports',
     },
     language: defaultLanguage,
   },

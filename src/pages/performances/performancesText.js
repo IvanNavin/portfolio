@@ -16,10 +16,10 @@ const en = {
 const performancesText = { ru, ua, en };
 
 export default () => {
-  const wrapper = document.querySelector('.performances');
+  const wrapper = document.querySelector('section.performances');
   const header = wrapper.querySelector('h2');
-  const regexpBtn = wrapper.querySelectorAll('[data-href="regexp"]');
-  const accessibilityBtn = wrapper.querySelectorAll('[data-href="accessibility"]');
+  const regexpBtn = wrapper.querySelector('[data-href="regexp"]');
+  const accessibilityBtn = wrapper.querySelector('[data-href="accessibility"]');
   const { local = 'ru' } = window;
   const { title, regexp, accessibility } = performancesText[local];
 
