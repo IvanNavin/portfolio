@@ -3,6 +3,7 @@ export default class FormManager {
     this.focusCls = 'fld-focus';
     this.completeCls = 'fld-complete';
     this.fields = document.querySelectorAll('[data-fld]');
+    this.init();
   }
 
   fldFocus(fld) {

@@ -11,12 +11,12 @@ section.contacts
                 svg
                     use(xlink:href='#instagram')
         h2 Сказать привет
-        form#contact-form
+        form#contact-form(name='contactForm')
             .form-block(data-form-block='')
-                input#name.fld(type='text' data-fld='')
+                input#name.fld(type='text' data-fld='' name='name')
                 label.lbl(for='name') Имя
             .form-block(data-form-block='')
-                textarea#message.fld.textarea(rows='5' data-fld='')
+                textarea#message.fld.textarea(rows='5' data-fld='' name='message')
                 label.lbl(for='message') Сообщение
             button(type='submit')
                 span Отправить сообщение

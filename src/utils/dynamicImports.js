@@ -113,6 +113,7 @@ const dynamicImports = (page, locale) => {
       }
       case 'contacts': {
         import('../pages/contacts/FormManager').then(({ default: FormManager }) => FormManager && new FormManager());
+        import('../pages/contacts/contacts').then((result) => result && result.default());
         break;
       }
       case 'accessibility': {
