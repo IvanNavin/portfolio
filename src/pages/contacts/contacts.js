@@ -6,7 +6,6 @@ export default () => {
     e.stopPropagation();
 
     const formData = new FormData(form);
-    formData.forEach((item) => console.log(item));
     const name = formData.get('name');
     const message = formData.get('message');
     const token = '5094623202:AAENP1keUX-FJe7Dp5lAcpPOCu3ze1hsIGU';
