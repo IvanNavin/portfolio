@@ -5,9 +5,10 @@
   "scripts": {
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack server",
+    "start": "node scripts/start.js",
     "lint": "npx eslint src/**/*.js --fix",
     "prettier": "npx prettier --write .",
-    "dev": "cross-env NODE_ENV=development webpack server",
     "prepare": "husky install"
   },
   "repository": {
@@ -37,16 +38,18 @@
     "prettier": "^2.3.2",
     "prettier-quick": "0.0.5",
     "pug": "^3.0.2",
-    "pug-html-loader": "^1.1.5",
+    "pug-html-loader": "^1.0.0",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
+    "telegram-bot-api": "^2.0.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
-    "@hapi/inert": "^6.0.4"
+    "@hapi/inert": "^6.0.4",
+    "node-telegram-bot-api": "0.56.0"
   }
 }

@@ -41,7 +41,6 @@ const dynamicImports = (page, locale) => {
 
   if (!isInit || langChanged) {
     switch (page) {
-      case '':
       case 'main-page': {
         import('../pages/main/mainText').then((result) => result && result.default());
         break;
@@ -51,7 +50,7 @@ const dynamicImports = (page, locale) => {
         break;
       }
       case 'my-works': {
-        import('../pages/myWorks/myWokrsText').then((result) => result && result.default());
+        import('../pages/myWorks/myWorksText').then((result) => result && result.default());
         break;
       }
       case 'contacts': {
