@@ -5,8 +5,8 @@ import './pages/about/download.scss';
 import { text } from './utils/text';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const router = new Router({ mode: 'history' });
+  const router = new Router({ mode: 'hash' });
 
   text();
-  router.listen();
+  router.init();
 });

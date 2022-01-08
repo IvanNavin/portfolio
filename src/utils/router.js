@@ -9,6 +9,7 @@ export class Router {
     this.navigationWrapper = document.querySelector('[data-nav-wrapper]');
     this.mode = window.history.pushState ? 'history' : 'hash';
     if (options.mode) this.mode = options.mode;
+    this.current = this.getFragment();
     this.defaultLocale = 'ru';
     this.locale = getCookie('locale') || this.defaultLocale;
     this.root = `/`;
@@ -144,5 +145,15 @@ export class Router {
         return false;
       });
     }
+  };
+
+  init = () => {
+    this.fadeNavigate();
+    dynamicImports(this.getFragment(), this.getLocale());
+    setTimeout(() => {
+      this.updateLinks();
+    }, 1000);
+
+    this.listen();
   };
 }
