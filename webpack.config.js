@@ -1,6 +1,10 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
+
+require('dotenv').config();
+// require('dotenv').load();
 
 const { NODE_ENV } = process.env;
 
@@ -87,6 +91,11 @@ module.exports = {
         { from: path.resolve(__dirname, "src/assets/img", "favicons"), to: "./assets/img/favicons" },
       ],
     }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.TG_TOKEN': JSON.stringify(process.env.TG_TOKEN),
+      'process.env.TG_CHAT_ID': JSON.stringify(process.env.TG_CHAT_ID),
+    })
   ],
   devServer: {
     port: 3000,

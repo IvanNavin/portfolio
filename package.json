@@ -5,6 +5,7 @@
   "scripts": {
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build": "cross-env NODE_ENV=production webpack",
+    "start": "node scripts/start.js",
     "dev": "cross-env NODE_ENV=development webpack server",
     "lint": "npx eslint src/**/*.js --fix",
     "prettier": "npx prettier --write .",
@@ -47,6 +48,7 @@
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
-    "@hapi/inert": "^6.0.4"
+    "@hapi/inert": "^6.0.4",
+    "dotenv": "^10.0.0"
   }
 }

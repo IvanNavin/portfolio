@@ -7,7 +7,7 @@ const ru = {
         Мне нравится превращать сложные задачи в простые, красивые и интуитивно понятные конструкции.
         Когда я не пишу код, я играю на ps5, жарю мясо или уделяю время семье.
         C 2018 по 2021 год я работал в компании "EvoPlay".
-        После этого я устроился в компанию "Luxoft".
+        С 2021 года я работаю в "Luxoft".
         Мне нравятся интересные задачи и находить интересные решения для них
         В компании я стараюсь проявлять свои софт-скилы
         Провожу доклады и стараюсь быть нужным.
@@ -39,7 +39,7 @@ const ua = {
       Мені подобається перетворювати складні завдання на прості, красиві та інтуїтивно зрозумілі конструкції.
       Коли я не пишу код, я граю на ps5, жарю м'ясо або приділяю час сім'ї.
       З 2018 по 2021 рік я працював у компанії "EvoPlay".
-      Після цього я влаштувався у компанію "Luxoft".
+      З 2021 року я працюю в "Luxoft".
       Мені подобаються цікаві завдання та знаходити цікаві рішення для них
       У компанії я намагаюся виявляти свої софт-скіли
       Проводжу доповіді та намагаюся бути потрібним.
@@ -71,7 +71,7 @@ const en = {
         I like to turn complex tasks into simple, beautiful and intuitive designs.
         When I’m not coding, I’m playing ps5, roasting meat, or taking time out for my family.
         From 2018 to 2021, I worked for EvoPlay.
-        After that I got a job at Luxoft.
+        From 2021, I have been working at Luxoft.
         I like interesting tasks and find interesting solutions for this
         In the company I try to show my soft skills
         I give talks and try to be relevant.
