@@ -8,6 +8,7 @@ import GAMEJSPRO from '../assets/video/game_js_pro.mp4';
 import { breadCrumbs } from './breadCrumbs';
 
 let isBackBtnLoad = false;
+let currentPage = '';
 
 const dynamicImports = (page, locale) => {
   page === '' && (page = 'main-page');
@@ -38,6 +39,9 @@ const dynamicImports = (page, locale) => {
     import('../components/backButton/back-btn').then((result) => result && result.default('#back-btn'));
     isBackBtnLoad = true;
   }
+
+  currentPage !== page && document.querySelectorAll('iframe').forEach((iframe) => (iframe.src = iframe.src));
+  currentPage = page;
 
   if (!isInit || langChanged) {
     switch (page) {

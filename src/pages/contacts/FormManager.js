@@ -1,3 +1,41 @@
+const clearAllErrors = () => {
+  document.querySelectorAll('[data-fld]').forEach((fld) => {
+    const wrapper = fld.closest('[data-form-block]');
+    const hint = wrapper.querySelector('.hint');
+
+    hint && wrapper.removeChild(hint);
+  });
+};
+
+const addError = (to, message) => {
+  clearAllErrors();
+  const wrapper = to.closest('[data-form-block]');
+  const html = `<span class="hint">${message}</span>`;
+
+  wrapper.insertAdjacentHTML('beforeend', html);
+};
+
+const removeError = (to) => {
+  const wrapper = to.closest('[data-form-block]');
+  const hint = wrapper.querySelector('.hint');
+
+  hint && wrapper.removeChild(hint);
+};
+
+export const validator = ({ name, message }) => {
+  if (name.value === '' || name.value.length < 2) {
+    addError(name, 'Введите более 1 символа');
+    return false;
+  }
+
+  if (message.value === '') {
+    addError(message, 'Это поле не может быть пустым');
+    return false;
+  }
+
+  return true;
+};
+
 export default class FormManager {
   constructor() {
     this.focusCls = 'fld-focus';
@@ -42,41 +80,13 @@ export default class FormManager {
         });
       });
 
+      this.fields.forEach((fld) => {
+        fld.addEventListener('input', () => {
+          removeError(fld);
+        });
+      });
+
       this.fields.forEach((fld) => this.fldBlur(fld));
     }
   }
 }
-
-const clearAllErrors = () => {
-  document.querySelectorAll('[data-fld]').forEach((fld) => {
-    const wrapper = fld.closest('[data-form-block]');
-    const hint = wrapper.querySelector('.hint');
-
-    hint && wrapper.removeChild(hint);
-  });
-};
-
-const addError = (to, message) => {
-  clearAllErrors();
-  const wrapper = to.closest('[data-form-block]');
-  const html = `<span class="hint">${message}</span>`;
-
-  wrapper.insertAdjacentHTML('beforeend', html);
-};
-
-export const validator = (params) => {
-  const { name } = params;
-  const { message } = params;
-
-  if (name.value === '' || name.value.length < 2) {
-    addError(name, 'Введите более 1 символа');
-    return false;
-  }
-
-  if (message.value === '') {
-    addError(message, 'Это поле не может быть пустым');
-    return false;
-  }
-
-  return true;
-};

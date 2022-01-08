@@ -1,5 +1,6 @@
 import dynamicImports from './dynamicImports';
 import { langButton } from '../components/langButton/langButton';
+import { getCookie, setCookie } from './cookie';
 
 export class Router {
   routes = [];
@@ -9,9 +10,10 @@ export class Router {
     this.mode = window.history.pushState ? 'history' : 'hash';
     if (options.mode) this.mode = options.mode;
     this.defaultLocale = 'ru';
-    this.locale = this.defaultLocale;
+    this.locale = getCookie('locale') || this.defaultLocale;
     this.root = `/`;
     this.navigate();
+    this.setLocale(this.locale);
   }
 
   add = (path, cb) => {
@@ -48,6 +50,7 @@ export class Router {
 
   setLocale = (locale) => {
     window.local = locale;
+    setCookie('locale', locale);
   };
 
   getLocale = () => window.local || this.defaultLocale;
@@ -131,7 +134,6 @@ export class Router {
         this.updateLinks();
       }, 1000);
 
-      document.querySelectorAll('iframe').forEach((iframe) => (iframe.src = iframe.src));
       this.routes.some((route) => {
         const match = this.current.match(route.path);
         if (match) {
