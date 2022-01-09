@@ -122,18 +122,21 @@ export class Router {
     this.interval = setInterval(this.interval, 50);
   };
 
+  pagesHandler = () => {
+    this.fadeNavigate();
+    dynamicImports(this.getFragment(), this.getLocale());
+    langButton(this.setLocale);
+    this.socialLinks(this.current);
+    setTimeout(() => {
+      this.updateLinks();
+    }, 1000);
+  };
+
   interval = () => {
     if (this.current !== this.getFragment() || this.locale !== this.getLocale()) {
       this.locale = this.getLocale();
       this.current = this.getFragment();
-      langButton(this.setLocale);
-
-      this.fadeNavigate();
-      dynamicImports(this.current, this.getLocale());
-      this.socialLinks(this.current);
-      setTimeout(() => {
-        this.updateLinks();
-      }, 1000);
+      this.pagesHandler();
 
       this.routes.some((route) => {
         const match = this.current.match(route.path);
@@ -148,11 +151,7 @@ export class Router {
   };
 
   init = () => {
-    this.fadeNavigate();
-    dynamicImports(this.getFragment(), this.getLocale());
-    setTimeout(() => {
-      this.updateLinks();
-    }, 1000);
+    this.pagesHandler();
 
     this.listen();
   };
