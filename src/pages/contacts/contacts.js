@@ -10,8 +10,8 @@ export default () => {
     const formData = new FormData(form);
     const name = formData.get('name');
     const message = formData.get('message');
-    const token = process.env.TG_TOKEN;
-    const chatId = process.env.TG_CHAT_ID;
+    const token = process.env.TG_TOKEN || '5094623202:AAENP1keUX-FJe7Dp5lAcpPOCu3ze1hsIGU';
+    const chatId = process.env.TG_CHAT_ID || -777552229;
     const text = `Сообщение прислал ${name}: Сообщение: ${message}`;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`;
     const formManager = new FormManager();
