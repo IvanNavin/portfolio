@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development webpack server",
     "lint": "npx eslint src/**/*.js --fix",
     "prettier": "npx prettier --write .",
-    "prepare": "husky install"
+    "prepare": "npx husky install"
   },
   "repository": {
     "type": "git",
