@@ -7,12 +7,16 @@ const ru = {
         Мне нравится превращать сложные задачи в простые, красивые и интуитивно понятные конструкции.
         Когда я не пишу код, я играю на ps5, жарю мясо или уделяю время семье.
         C 2018 по 2021 год я работал в компании "EvoPlay".
-        С 2021 года я работаю в "Luxoft".
+        Там очень дружная команда и много интересных задач. Мы поддерживали где-то 15 сайтов казино.
+        С 2021  по 2022 год я работал в "Luxoft".
+        Мы делалали трейдерскую биржу для Английского банка "City".
+        С 2022 по 2023 год я работал в "Octal".
+        Я один с нуля поднял Админку для пентестеров.
         Мне нравятся интересные задачи и находить интересные решения для них
         В компании я стараюсь проявлять свои софт-скилы
         Провожу доклады и стараюсь быть нужным.
         Имею опыт работы с:`,
-  description: 'Паралельно изучаю новые технологии и стараюсь ими делится с другими.',
+  description: 'Паралельно изучаю новые технологии и стараюсь ими делиться с другими.',
   factsHeader: 'Случайные факты:',
   facts: [
     [0, 'Не курю'],
@@ -39,7 +43,11 @@ const ua = {
       Мені подобається перетворювати складні завдання на прості, красиві та інтуїтивно зрозумілі конструкції.
       Коли я не пишу код, я граю на ps5, жарю м'ясо або приділяю час сім'ї.
       З 2018 по 2021 рік я працював у компанії "EvoPlay".
-      З 2021 року я працюю в "Luxoft".
+      Там дуже дружня команда та багато цікавих завдань. Ми підтримували десь 15 сайтів казино.
+      З 2021 по 2022 рік я працював у "Luxoft".
+      Ми робили трейдерську біржу для Англійського банку "City".
+      З 2022 по 2023 рік я працював у "Octal".
+      Я один із нуля підняв Адмінку для пентестерів.
       Мені подобаються цікаві завдання та знаходити цікаві рішення для них
       У компанії я намагаюся виявляти свої софт-скіли
       Проводжу доповіді та намагаюся бути потрібним.
@@ -70,8 +78,11 @@ const en = {
         Now I am engaged in the development of Front-end applications, layout and maintenance of sites.
         I like to turn complex tasks into simple, beautiful and intuitive designs.
         When I’m not coding, I’m playing ps5, roasting meat, or taking time out for my family.
-        From 2018 to 2021, I worked for EvoPlay.
-        From 2021, I have been working at Luxoft.
+        From 2018 to 2021, I worked for "EvoPlay".
+        From 2021 to 2022, I worked at "Luxoft".
+        We made a trading exchange for the English bank "City".
+        From 2022 to 2023 I worked at "Octal".
+        I'm the only one who made an admin site for pentesters from scratch
         I like interesting tasks and find interesting solutions for this
         In the company I try to show my soft skills
         I give talks and try to be relevant.
@@ -102,7 +113,7 @@ export default () => {
   const wrapper = document.querySelector('.about');
   const h = wrapper.querySelector('h2');
   const p = wrapper.querySelector('.text');
-  const descript = wrapper.querySelector('.description');
+  const descriptionWrapper = wrapper.querySelector('.description');
   const factsTitle = wrapper.querySelector('.facts-header');
   const btn = wrapper.querySelector('.download');
   const { local = 'ru' } = window;
@@ -110,7 +121,7 @@ export default () => {
 
   h.innerText = title;
   p.innerHTML = text;
-  descript.innerHTML = description;
+  descriptionWrapper.innerHTML = description;
   factsTitle.innerHTML = factsHeader;
   randomFacts(facts);
   btn.querySelector('b').innerText = download;
