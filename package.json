@@ -4,7 +4,7 @@
   "description": "Holovko Ivan Portfolio",
   "scripts": {
     "build:dev": "npx cross-env NODE_ENV=development webpack",
-    "build": "npx cross-env NODE_ENV=production webpack",
+    "build": "webpack",
     "start": "node scripts/start.js",
     "dev": "npx cross-env NODE_ENV=development webpack server",
     "lint": "npx eslint src/**/*.js --fix",
