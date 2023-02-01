@@ -15,7 +15,7 @@ const btnText = { ru, ua, en };
 export const btn = (wrapper) => {
   const resultBtn = wrapper.querySelector('[data-btn-text="result"]');
   const codeBtn = wrapper.querySelector('[data-btn-text="code"]');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { result, seeCodeHere } = btnText[local];
 
   resultBtn && (resultBtn.innerHTML = result);

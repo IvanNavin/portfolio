@@ -1,5 +1,5 @@
 export const langButton = (setLocale) => {
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const btnWrapper = document.getElementById('lang');
   const languageBtns = btnWrapper.querySelectorAll('.lang');
 

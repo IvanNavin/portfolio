@@ -20,7 +20,7 @@ export default () => {
   const header = wrapper.querySelector('h2');
   const regexpBtn = wrapper.querySelector('[data-href="regexp"]');
   const accessibilityBtn = wrapper.querySelector('[data-href="accessibility"]');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { title, regexp, accessibility } = performancesText[local];
 
   header.innerText = title;

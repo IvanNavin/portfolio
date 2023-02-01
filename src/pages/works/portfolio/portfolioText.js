@@ -77,7 +77,7 @@ const portfolioText = { ru, ua, en };
 export default () => {
   const wrapper = document.querySelector('.portfolio');
   const paragraph = wrapper.querySelector('p');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { text } = portfolioText[local];
 
   paragraph.innerHTML = text;

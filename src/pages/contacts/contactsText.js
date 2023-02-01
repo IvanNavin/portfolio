@@ -30,7 +30,7 @@ export default () => {
   const nameLbl = wrapper.querySelector('label[for="name"]');
   const messageLbl = wrapper.querySelector('label[for="message"]');
   const btn = wrapper.querySelector('button');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { title, name, message, sendMsg, msgSent, error } = contactsText[local];
 
   header.innerText = title;

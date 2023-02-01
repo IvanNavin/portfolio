@@ -26,7 +26,7 @@ const RPGText = { ru, ua, en };
 export default () => {
   const wrapper = document.querySelector('.RPG');
   const paragraph = wrapper.querySelector('p');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { text } = RPGText[local];
 
   paragraph.innerText = text;

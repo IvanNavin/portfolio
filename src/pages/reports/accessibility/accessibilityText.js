@@ -15,7 +15,7 @@ const accesssibilityText = { ru, ua, en };
 export default () => {
   const wrapper = document.querySelector('.accessibility');
   const headers = wrapper.querySelectorAll('h2');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { title, linkName } = accesssibilityText[local];
 
   headers[0].innerText = title;

@@ -78,7 +78,7 @@ const mainText = { ru, ua, en };
 export default () => {
   const wrapper = document.querySelector('.main-page');
   const navMenu = wrapper.querySelector('[data-nav-menu]');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { buttons, press } = mainText[local];
   const help = wrapper.querySelector('.help');
   const btnStyle = 'background: transparent; outline: transparent; border-color: transparent;';

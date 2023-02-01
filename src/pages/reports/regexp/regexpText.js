@@ -25,7 +25,7 @@ export default () => {
   const wrapper = document.querySelector('.regexp');
   const headers = wrapper.querySelectorAll('h2');
   const links = wrapper.querySelectorAll('a');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { title, linkName, wikiLink, learnJS, crib } = regexpText[local];
 
   headers[0].innerText = title;

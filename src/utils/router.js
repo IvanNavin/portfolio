@@ -10,7 +10,7 @@ export class Router {
     this.mode = window.history.pushState ? 'history' : 'hash';
     if (options.mode) this.mode = options.mode;
     this.current = this.getFragment();
-    this.defaultLocale = 'ru';
+    this.defaultLocale = 'en';
     this.locale = getCookie('locale') || this.defaultLocale;
     this.root = `/`;
     this.navigate();

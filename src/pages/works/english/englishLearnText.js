@@ -34,7 +34,7 @@ const englishLearnText = { ru, ua, en };
 export default () => {
   const wrapper = document.querySelector('.english-learn');
   const paragraph = wrapper.querySelector('p');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { text } = englishLearnText[local];
 
   paragraph.innerHTML = text;

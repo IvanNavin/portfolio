@@ -30,7 +30,7 @@ const dynamicImports = (page, locale) => {
   const pathIndex = breadCrumbs.findIndex((crumb) => crumb.page === page);
   const { isInit, language } = currentCrumb;
   const langChanged = locale !== language;
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
 
   backBtn.dataset.href = currentCrumb.parentPage;
   backBtnP.innerHTML = currentCrumb.parentName[local];

@@ -56,7 +56,7 @@ const englishLearnText = { ru, ua, en };
 export default () => {
   const wrapper = document.querySelector('.pokedex');
   const paragraph = wrapper.querySelectorAll('p');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { text, secondText, thirdText, fourText } = englishLearnText[local];
 
   paragraph[0].innerText = text;

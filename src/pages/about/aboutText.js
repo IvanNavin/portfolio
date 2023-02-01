@@ -116,7 +116,7 @@ export default () => {
   const descriptionWrapper = wrapper.querySelector('.description');
   const factsTitle = wrapper.querySelector('.facts-header');
   const btn = wrapper.querySelector('.download');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { title, text, description, factsHeader, facts, download } = aboutText[local];
 
   h.innerText = title;

@@ -19,7 +19,7 @@ export default () => {
   const wrapper = document.querySelector('.my-works');
   const header = wrapper.querySelector('h2');
   const paragraph = wrapper.querySelector('p');
-  const { local = 'ru' } = window;
+  const { local = 'en' } = window;
   const { title, description } = myWorks[local];
 
   header.innerText = title;
