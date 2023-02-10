@@ -74,14 +74,14 @@ const ua = {
 };
 const en = {
   title: 'Hello There!',
-  text: `Since I was 12, I have dreamed to be a programmer and to creating something interesting. I understood that it was very difficult, if you have no knowledge in it. However it didn't scare me. I started my way with studying Basic, Pascal and Delphi. But my life path turned to be different. It took me around 15 years to realize that I wanted to be a programmer. There is a lot of information available on the Internet and I began studying Front-end development.</br>
+  text: `Since I was 12, I have dreamed to be a programmer and to creating something interesting. I understood that it was very difficult, if you have no knowledge in it. However, it didn't scare me. I started my way with studying Basic, Pascal and Delphi. But my life path turned to be different. It took me around 15 years to realize that I wanted to be a programmer. There is a lot of information available on the Internet and I began studying Front-end development.</br>
         Now I am engaged in the development of Front-end applications, layout and maintenance of sites.</br>
         I like to turn complex tasks into simple, beautiful and intuitive designs.</br>
-        When I’m don't code, I play ps5, roast meat, or spend time with my family.</br>
+        When I don't code, I play ps5, roast meat, or spend time with my family.</br>
         From 2018 to 2021 I worked for "EvoPlay".</br>
-        From 2021 to 2022, I worked at "Luxoft".</br>
+        From 2021 to 2022, I worked for "Luxoft".</br>
         We developed a trading exchange for the English bank "City".</br>
-        From 2022 to 2023 I worked at "Octal".</br>
+        From 2022 to 2023 I worked for "Octal".</br>
         In this company I was the only one who made an admin site for pentesters from scratch.</br>
         I like interesting and challenging tasks for which I try to find the most optimal and workable solutions.</br>
         In all companies I worked for, I managed to show my soft skills, find common solutions in the team and try to be relevant</br>

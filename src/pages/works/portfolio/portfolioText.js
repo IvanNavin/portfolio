@@ -51,21 +51,21 @@ const ua = {
 const en = {
   text: `I find it important to have a professional portfolio site that displays all of my projects and accomplishments.
         <br>
-        At first I had no idea how the site of a part-folder should look and what should be in it. I started googling and reading articles on what should be in a portfolio.
+        At first I had no idea how the site of a part-folder should look and what should be in it. I started enquiring and reading articles on this topic.
         <br>
-        I drew up a plan, decided on a color scheme, sketched a couple of ideas. And set to work. The thing I understood about it was it had to be unique and creative. Fuh, it was difficult!
+        I drew up a plan, decided on a color scheme, sketched a couple of ideas and set to work. The thing I understood about it was it had to be unique and creative. Fuh, it was difficult!
         <br>
-        First, the user is taken to the home page where i used the fluid effect. I did not find such a library, but I found places where this effect was applied and borrowed it from there, slightly transforming it in my own way. Here on the main page, you can interact with the animation by pressing SPACE. Flashes of fluid animations will appear, by pressing "P". If you want to stop the animation, you can press pause. By clicking and swiping across the screen with a mouse or finger, the animation is brought into action.
+        First, the user is taken to the home page where I used the fluid effect. I did not find such a library, but I found places where this effect was applied and borrowed it from there, slightly transforming it in my own way. Here on the main page, you can interact with the animation by pressing SPACE. Flashes of fluid animations will appear, by pressing "P". If you want to stop the animation, you can press pause. By clicking and swiping across the screen with a mouse or finger, the animation is brought into action.
         <br>
-        Then the user can go to the "About me" page. On this page I introduce my personal history, the stack of technologies I own, work experience and random facts about me =)
+        Then the user can go to the "About me" page. On this page I introduce my personal story, the stack of technologies I own, work experience and other facts about me =)
         <br>
         At this point, I thought it would be good to add a back button. I found an interesting canvas animation and applied it to the back button.
         <br>
         The user can go to the projects page (all the best projects with the description of applied technologies used and links to Github. I think live video demos will live here too).
         <br>
-        The user can go to the "contacts" page to contact me, and on the page of my reports he/she can learn the skills that I share with others.
+        The user can go to the "contacts" page to contact me. On the page of my reports the skills that I share with others can be shown.
         <br>
-        At the beginning of writing the code, I didn't know what stack my portfolio site would have. Looking back in the time I really wanted to write it in React, but my basic knowledge hadn't been enough for it, so I had used ES6. Since the time I have gained much experience in React and now I think can perform much better. I realized that I needed to customize and add functions in a way that would demonstrate my programming skills, so I wrote it in native JS
+        At the beginning of writing the code, I didn't know what stack my portfolio site would have. Looking back in the time I really wanted to write it in React, but my basic knowledge hadn't been enough for it, so I had used ES6. Since the time I have gained much experience in React, and now I think I can perform much better. I realized that I needed to customize and add functions in a way that would demonstrate my programming skills, so I wrote it in native JS.
         <br>
         The main purpose of this portfolio website is to showcase the projects I've created, and of course, the site itself!
         <br>`,

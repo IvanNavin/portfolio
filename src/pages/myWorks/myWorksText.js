@@ -11,7 +11,7 @@ const ua = {
 const en = {
   title: 'My works',
   description:
-    'Since in the companies in which I worked, I signed an NDA (non-disclosure agreement), I will have to post sandbox here',
+    'According to the regulations which I signed (NDA), working for the company, I will have to post sandbox here',
 };
 const myWorks = { ru, ua, en };
 

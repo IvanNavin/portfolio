@@ -18,11 +18,11 @@ const ua = {
 };
 const en = {
   text: `Here I managed to write an online game in which several people can play at once.
-         Cool experience with sockets and server side.
+         This is cool experience with sockets and server side.
          There is an online chat.
          Stack: HTML / SASS / JS / Webpack5 / Websocket (socket.io) / EsLint / Prettier
          To check the functionality of the game and chat, you can launch the game in several tabs.
-         Unfortunately, the backend is not working now.`,
+         Currently the backend is not working now.`,
 };
 const RPGText = { ru, ua, en };
 
