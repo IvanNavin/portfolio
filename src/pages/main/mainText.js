@@ -51,7 +51,7 @@ const ua = {
 const en = {
   buttons: [
     {
-      firstName: 'Hello!',
+      firstName: 'Hello,',
       secondName: 'About me',
       dataHref: 'about',
     },
@@ -61,7 +61,7 @@ const en = {
       dataHref: 'my-works',
     },
     {
-      firstName: 'Name',
+      firstName: "Name's",
       secondName: 'contacts',
       dataHref: 'contacts',
     },

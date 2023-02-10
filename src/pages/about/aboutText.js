@@ -74,19 +74,18 @@ const ua = {
 };
 const en = {
   title: 'Hello There!',
-  text: `Since I was 12, I dreamed of being a programmer and creating something interesting. I understood that it was very difficult - but it didn’t scare me! I studied first Basic, Pascal and then Delphi. But life turned out so that my life path took a different path. And after a while I again decided to do what I loved. There is a lot of information available on the Internet and I began to study Front-end development.
-        Now I am engaged in the development of Front-end applications, layout and maintenance of sites.
-        I like to turn complex tasks into simple, beautiful and intuitive designs.
-        When I’m not coding, I’m playing ps5, roasting meat, or taking time out for my family.
-        From 2018 to 2021, I worked for "EvoPlay".
-        From 2021 to 2022, I worked at "Luxoft".
-        We made a trading exchange for the English bank "City".
-        From 2022 to 2023 I worked at "Octal".
-        I'm the only one who made an admin site for pentesters from scratch
-        I like interesting tasks and find interesting solutions for this
-        In the company I try to show my soft skills
-        I give talks and try to be relevant.
-        I have experience working with:`,
+  text: `Since I was 12, I have dreamed to be a programmer and to creating something interesting. I understood that it was very difficult, if you have no knowledge in it. However it didn't scare me. I started my way with studying Basic, Pascal and Delphi. But my life path turned to be different. It took me around 15 years to realize that I wanted to be a programmer. There is a lot of information available on the Internet and I began studying Front-end development.</br>
+        Now I am engaged in the development of Front-end applications, layout and maintenance of sites.</br>
+        I like to turn complex tasks into simple, beautiful and intuitive designs.</br>
+        When I’m don't code, I play ps5, roast meat, or spend time with my family.</br>
+        From 2018 to 2021 I worked for "EvoPlay".</br>
+        From 2021 to 2022, I worked at "Luxoft".</br>
+        We developed a trading exchange for the English bank "City".</br>
+        From 2022 to 2023 I worked at "Octal".</br>
+        In this company I was the only one who made an admin site for pentesters from scratch.</br>
+        I like interesting and challenging tasks for which I try to find the most optimal and workable solutions.</br>
+        In all companies I worked for, I managed to show my soft skills, find common solutions in the team and try to be relevant</br>
+        I have experience in:`,
   description: 'At the same time, I study new technologies and try to share them with others.',
   factsHeader: 'Random facts:',
   facts: [
