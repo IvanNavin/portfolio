@@ -35,19 +35,19 @@ const ua = {
          У майбутньому я планую додати до проекту нескінченне підвантаження`,
 };
 const en = {
-  text: `Pokedex is the result of an advanced React Marathon run by Zar Zakharov
-         In this marathon, I really liked the design and new technologies of React
-
-         There was a kit in the design - a set and names of all colors, gradients, fonts and their sizes, etc.
-         At the entrance of the marathon, I implemented the following technologies in this project:`,
-  secondText: `In fact, there are many interesting moments in this marathon.
-         The whole project is written in hooks.
-        
-         Later, it helped me a lot - when I switched to the new React command, I immediately began to translate HOC
+  text: `Pokedex is the result of an advanced React Marathon run by Zar Zakharov.</br>
+         In this marathon which I successfully did I can I would like to dwell on the design, new technologies of React and other aspects.</br>
+         </br>
+         There was a kit in the design - a set of names of all colors, gradients, fonts and their sizes, etc.</br>
+         At the entrance of the marathon I implemented the following technologies in this project:`,
+  secondText: `In fact, there are many interesting moments in this marathon.</br>
+         The whole project is written in hooks.</br>
+         
+         Later, it helped me a lot - when I switched to the new React command, I immediately began to translate Class components
          on hooks. Subsequently, I was able to share this knowledge with the team.`,
   thirdText:
-    'Unfortunately API is written with the http protocol and does not work on https below video demonstration of a working project',
-  fourText: `In the course of writing this project, I independently added at my discretion a filter by type and attack, as well as
+    'Unfortunately API is written with the http protocol and is not available currently. Below you can see video demonstration of a working project',
+  fourText: `In the course of writing this project, I independently added a filter by type and attack, as well as
              made modals via "createPortal".
          In the future, I plan to add infinite loading to the project.`,
 };
