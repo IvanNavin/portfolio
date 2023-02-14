@@ -13,7 +13,6 @@ export class Router {
     this.defaultLocale = 'en';
     this.locale = getCookie('locale') || this.defaultLocale;
     this.root = `/`;
-    this.navigate();
     this.setLocale(this.locale);
   }
 
