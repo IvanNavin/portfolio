@@ -79,6 +79,17 @@ export const breadCrumbs = [
     language: defaultLanguage,
   },
   {
+    page: 'ganttChart',
+    isInit: false,
+    parentPage: 'my-works',
+    parentName: {
+      ru: 'Мои работы',
+      ua: 'Мої роботи',
+      en: 'My works',
+    },
+    language: defaultLanguage,
+  },
+  {
     page: 'thanos-effect',
     isInit: false,
     parentPage: 'my-works',

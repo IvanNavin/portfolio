@@ -6,9 +6,16 @@ import THANOS from '../../assets/img/thanos.jpg';
 import ENGLISH from '../../assets/img/English.jpg';
 import RPG from '../../assets/img/RPG.png';
 import RPGGAME from '../../assets/img/RPG-GAME.png';
+import GANTTCHARTFRONT from '../../assets/img/ganttChartFront.png';
+import GANTTCHARTBACK from '../../assets/img/ganttChartBack.png';
 
 const myWorks = () => {
   const works = [
+    {
+      dataHref: 'ganttChart',
+      backUrl: GANTTCHARTFRONT,
+      frontUrl: GANTTCHARTBACK,
+    },
     {
       dataHref: 'RPG',
       backUrl: RPG,

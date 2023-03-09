@@ -3,6 +3,7 @@ import PORTFOLIO from '../assets/img/portfolio.png';
 import POKEDEXHOME from '../assets/img/pokedex-home.png';
 import ENGLISH from '../assets/img/English.jpg';
 import THANOS from '../assets/img/thanos.jpg';
+import GANTTCHARTFRONT from '../assets/img/ganttChartFront.png'
 import EFFECTTHANOS from '../assets/video/effectThanos.mp4';
 import GAMEJSPRO from '../assets/video/game_js_pro.mp4';
 import { breadCrumbs } from './breadCrumbs';
@@ -20,6 +21,7 @@ const dynamicImports = (page, locale) => {
   const portfolioHeader = document.getElementById('portfolio');
   const thanosHeader = document.getElementById('thanos');
   const rpgHeader = document.getElementById('rpg');
+  const ganttChartHeader = document.getElementById('ganttChart');
   const backBtn = document.querySelector('.back-button');
   const backBtnP = document.querySelector('.back-button p');
   let currentCrumbIndex = 0;
@@ -93,6 +95,11 @@ const dynamicImports = (page, locale) => {
         import('../pages/works/RPG/RPGText').then((result) => result && result.default());
         break;
       }
+      case 'ganttChart': {
+        import('../pages/works/ganttChart/ganttChart')
+          .then((result) => result && result.default());
+        break;
+      }
       default:
         break;
     }
@@ -156,6 +163,13 @@ const dynamicImports = (page, locale) => {
           `<video loop='' autoplay='' muted='' poster=''>
                     <source src="${GAMEJSPRO}" />
                 </video>`,
+        );
+        break;
+      }
+      case 'ganttChart': {
+        ganttChartHeader.insertAdjacentHTML(
+          'afterend',
+          `<img src="${GANTTCHARTFRONT}" alt="English site img"/>`,
         );
         break;
       }
