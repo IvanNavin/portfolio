@@ -1,4 +1,4 @@
-import { btn } from "../btn";
+import { btn } from '../btn';
 
 const ru = {
   text: 'Это результат тестового задания. В нём я использовал технологии которые использую в текущем проекте.',
@@ -20,4 +20,4 @@ export default () => {
 
   paragraph.innerText = text;
   btn(wrapper);
-}
+};

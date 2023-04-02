@@ -8,9 +8,16 @@ import RPG from '../../assets/img/RPG.png';
 import RPGGAME from '../../assets/img/RPG-GAME.png';
 import GANTTCHARTFRONT from '../../assets/img/ganttChartFront.png';
 import GANTTCHARTBACK from '../../assets/img/ganttChartBack.png';
+import MINERBACK from '../../assets/img/minerBack.png';
+import MINERFRONT from '../../assets/img/minerFront.png';
 
 const myWorks = () => {
   const works = [
+    {
+      dataHref: 'miner',
+      backUrl: MINERFRONT,
+      frontUrl: MINERBACK,
+    },
     {
       dataHref: 'ganttChart',
       backUrl: GANTTCHARTFRONT,

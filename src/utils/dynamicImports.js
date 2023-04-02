@@ -3,7 +3,8 @@ import PORTFOLIO from '../assets/img/portfolio.png';
 import POKEDEXHOME from '../assets/img/pokedex-home.png';
 import ENGLISH from '../assets/img/English.jpg';
 import THANOS from '../assets/img/thanos.jpg';
-import GANTTCHARTFRONT from '../assets/img/ganttChartFront.png'
+import GANTTCHARTFRONT from '../assets/img/ganttChartFront.png';
+import MINERFRONT from '../assets/img/minerFront.png';
 import EFFECTTHANOS from '../assets/video/effectThanos.mp4';
 import GAMEJSPRO from '../assets/video/game_js_pro.mp4';
 import { breadCrumbs } from './breadCrumbs';
@@ -22,6 +23,7 @@ const dynamicImports = (page, locale) => {
   const thanosHeader = document.getElementById('thanos');
   const rpgHeader = document.getElementById('rpg');
   const ganttChartHeader = document.getElementById('ganttChart');
+  const minerHeader = document.getElementById('miner');
   const backBtn = document.querySelector('.back-button');
   const backBtnP = document.querySelector('.back-button p');
   let currentCrumbIndex = 0;
@@ -96,8 +98,11 @@ const dynamicImports = (page, locale) => {
         break;
       }
       case 'ganttChart': {
-        import('../pages/works/ganttChart/ganttChart')
-          .then((result) => result && result.default());
+        import('../pages/works/ganttChart/ganttChart').then((result) => result && result.default());
+        break;
+      }
+      case 'miner': {
+        import('../pages/works/miner/miner').then((result) => result && result.default());
         break;
       }
       default:
@@ -167,10 +172,11 @@ const dynamicImports = (page, locale) => {
         break;
       }
       case 'ganttChart': {
-        ganttChartHeader.insertAdjacentHTML(
-          'afterend',
-          `<img src="${GANTTCHARTFRONT}" alt="English site img"/>`,
-        );
+        ganttChartHeader.insertAdjacentHTML('afterend', `<img src="${GANTTCHARTFRONT}" alt="English site img"/>`);
+        break;
+      }
+      case 'miner': {
+        minerHeader.insertAdjacentHTML('afterend', `<img src="${MINERFRONT}" alt="Miner img"/>`);
         break;
       }
       default:
