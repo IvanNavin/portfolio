@@ -1,36 +1,70 @@
 -
-    var skills = [
+    var htmlSkills = [
         "HTML",
+        "Accessibility",
         "Twig",
         "Pug",
-        "CSS",
+        "Bootstrap",
+        "MaterialUI",
+        "SemanticUI",
+        "Mantine",
+    ];
+    var cssSkills = [
+        "Css",
         "Less",
         "Sass",
-        "JS / ES6 +",
+        "Scss",
+    ];
+    var JSSkills = [
+        "JavaScript",
         "JQuery",
         "React",
         "Redux",
         "Thunk",
         "Redux Toolkit Query",
+        "Zustand",
         "TypeScript",
-        "Jest",
-        "GraphQL",
+        "Next.js",
         "AMPS",
-        "Gulp",
+        "Lodash",
+        "Ramda.js",
+        "AGGrid"
+    ];
+    var otherSkills = [
         "Webpack",
+        "GraphQL",
+        "Jest",
+        "Gulp",
         "EsLint",
         "Prettier",
-        "Bootstrap",
-        "MaterialUI",
     ];
 
 section.about
     .container
         h2
         p.text
-        ul.skills
-            each skill in skills
-              li= skill
+        div.skillsWrapper
+            div.box.asfs
+                div.icon.html
+                ul.skills
+                    each skill in htmlSkills
+                        li= skill
+            div.box.asfe
+                div.icon.css
+                ul.skills
+                    each skill in cssSkills
+                        li= skill
+            div.box.asfs
+                div.icon.js
+                ul.skills
+                    each skill in JSSkills
+                        li= skill
+            div.box.asfe
+                div.icon.other
+                    div
+                ul.skills
+                    each skill in otherSkills
+                        li= skill
         p.description
         h2.facts-header
         ul.facts(data-facts='')
